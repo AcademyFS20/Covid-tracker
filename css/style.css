@@ -1,2 +1,60 @@
+@import url("https://fonts.googleapis.com/css2?family=Gamja+Flower&family=Indie+Flower&display=swap%27");
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0; }
+
 html {
-  font-size: 16px; }
+  font-size: 62.5%; }
+
+.section1 {
+  background-color: #1078ad;
+  padding-bottom: 20px; }
+  .section1__title {
+    color: #B6BDBC;
+    text-align: center;
+    font-size: 3rem;
+    margin-bottom: 20px; }
+
+.div1 {
+  display: flex;
+  justify-content: space-around;
+  font-size: 2rem;
+  color: white; }
+  .div1__div--title {
+    color: #f4cf1b; }
+  .div1__div--a {
+    display: block; }
+  .div1__div--a#lien1 {
+    background-color: #f4cf1b;
+    width: 150px;
+    height: 40px;
+    text-align: center;
+    padding-top: 5px;
+    margin-top: 10px;
+    margin-bottom: 10px; }
+  .div1__div--a#lien2 {
+    text-decoration: underline solid #f4cf1b; }
+
+.section2 {
+  background-color: #bfdbea; }
+  .section2__title {
+    text-align: center;
+    padding-top: 10px;
+    font-size: 2rem; }
+  .section2__image {
+    display: block;
+    margin: 10px auto; }
+  .section2__a {
+    display: inline-block;
+    text-align: center;
+    text-decoration: none;
+    margin: 10px 0 10px 43%;
+    padding-top:10px;
+    font-size: 2rem;
+    background-color: #2684b5;
+    color: white;
+    width: 200px;
+    height: 50px; }
