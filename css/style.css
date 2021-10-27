@@ -1,0 +1,48 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;1,300;1,400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;1,300;1,400&family=Roboto+Mono:wght@700&display=swap");
+/* Text color */
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0; }
+
+html {
+  font-size: 62.5%; }
+
+.header {
+  width: 100%;
+  background-color: #bfdbea;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  align-content: stretch; }
+  .header__nav {
+    margin: 5rem;
+    width: 40rem;
+    font-size: 2.4rem;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    align-items: flex-start;
+    align-content: stretch; }
+    .header__nav--conseil {
+      text-decoration: none; }
+    .header__nav--acceuil {
+      text-decoration: none; }
+
+.info {
+  background-color: #f4cf1b;
+  text-align: center;
+  padding: 2rem 50rem; }
+  .info__titre {
+    font-size: 2.4rem;
+    font-family: "Roboto Mono", monospace; }
+  .info__texte {
+    color: #1479ac;
+    font-size: 2rem;
+    font-family: "Lato", sans-serif; }
