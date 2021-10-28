@@ -20,6 +20,9 @@ html {
   justify-content: space-between;
   align-items: flex-start;
   align-content: stretch; }
+  .header__logo {
+    margin-top: 1rem;
+    margin-left: 1rem; }
   .header__nav {
     margin: 5rem;
     width: 40rem;
@@ -29,11 +32,38 @@ html {
     flex-wrap: nowrap;
     justify-content: space-around;
     align-items: flex-start;
-    align-content: stretch; }
+    align-content: stretch;
+    font-family: "Lato", sans-serif; }
     .header__nav--conseil {
-      text-decoration: none; }
+      text-decoration: none;
+      color: #26519e; }
     .header__nav--acceuil {
-      text-decoration: none; }
+      text-decoration: none;
+      color: #26519e; }
+
+.languebutton {
+  background-color: #bfdbea;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  color: #26519e;
+  text-align: center;
+  display: inline-flex;
+  font-size: 2.4rem;
+  cursor: pointer;
+  font-family: "Lato", sans-serif; }
+  .languebutton__image {
+    /*         display:inline-flex;
+ */
+    align-items: center;
+    padding: 0 1rem; }
+    .languebutton__image--brit {
+      width: 3.4rem; }
+
+.languebutton:hover {
+  background: #86c6e9; }
+
+.languebutton:active {
+  background: #56849c; }
 
 .info {
   background-color: #f4cf1b;
