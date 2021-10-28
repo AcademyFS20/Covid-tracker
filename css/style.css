@@ -32,3 +32,29 @@
     height: 3rem;
     font-size: 2rem;
     border: 0; }
+
+.symptomes__title {
+  margin-top: 20px 20px;
+  color: #2684b5;
+  font-size: 2.5rem;
+  width: 100%;
+  text-align: center; }
+
+.symptomes__grid {
+  display: grid;
+  grid-template-areas: 'areaVide1 areaFievre areaVomissements areaVide2'  'areaVide1 areaRespiratoire areaToux areaVide2';
+  text-align: center; }
+
+.symptomes__fievre {
+  grid-area: areaFievre; }
+
+.symptomes__vomissements {
+  grid-area: areaVomissements;
+  margin: 45px 0; }
+
+.symptomes__respiratoire {
+  grid-area: areaRespiratoire; }
+
+.symptomes__toux {
+  margin: 15px 0;
+  grid-area: areaToux; }
