@@ -48,13 +48,71 @@ html {
     display: block;
     margin: 10px auto; }
   .section2__a {
-    display: inline-block;
+    display: block;
     text-align: center;
     text-decoration: none;
-    margin: 10px 0 10px 43%;
-    padding-top:10px;
+    margin: 10px auto;
+    margin-bottom: 20px;
     font-size: 2rem;
     background-color: #2684b5;
     color: white;
     width: 200px;
-    height: 50px; }
+    height: 50px;
+    border-radius: 5px;
+    padding-top: 10px; }
+
+.section3__image {
+  display: block;
+  margin: 10px auto; }
+
+.section3__div {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 10px;
+  margin-bottom: 10px; }
+
+.dive {
+  width: 25%;
+  font-size: 2rem;
+  text-align: center; }
+  .dive__title1 {
+    color: #2684b5; }
+  .dive__title3, .dive__title5 {
+    color: green; }
+  .dive__list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    height: 100%; }
+    .dive__list--a {
+      text-decoration: none;
+      color: black;
+      font-weight: bold; }
+
+#elm1 {
+  border-radius: 5px;
+  border: 1px solid #bfdbea;
+  padding: 5px;
+  font-size: 1.5rem; }
+
+.elm2 {
+  color: #1078ad; }
+
+i {
+  color: #f4cf1b; }
+
+.dive2 {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; }
+
+.dive3 {
+  padding-top: 50px;
+  color: #B6BDBC; }
+
+.section4 {
+  height: 20px;
+  background-color: #2684b5; }
