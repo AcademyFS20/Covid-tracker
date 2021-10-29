@@ -31,7 +31,8 @@
     width: 90%;
     height: 3rem;
     font-size: 2rem;
-    border: 0; }
+    border: 0;
+    font-weight: bold; }
 
 .symptomes__title {
   margin-top: 20px 20px;
@@ -114,5 +115,60 @@
       border-color: #ededed; }
 
 @media screen and (min-width: 320px) and (max-width: 425px) {
-  .header {
-    width: 100%; } }
+  .container {
+    width: 100%;
+    display: flex;
+    flex-direction: column; }
+    .container__image {
+      display: none; }
+    .container h1 {
+      font-size: 1.5rem; }
+    .container p {
+      font-size: 1.2rem; }
+    .container button {
+      font-size: 0.80rem;
+      width: 80%;
+      height: 3rem; } }
+
+@media screen and (min-width: 425px) and (max-width: 768px) {
+  .container {
+    width: 100%;
+    display: flex;
+    flex-direction: column; }
+    .container__image {
+      display: none; }
+    .container h1 {
+      font-size: 1.5rem; }
+    .container p {
+      font-size: 1.2rem; }
+    .container button {
+      font-size: 0.80rem;
+      width: 80%;
+      height: 3rem; } }
+
+@media screen and (min-width: 320px) and (max-width: 425px) {
+  .symptomes h1 {
+    font-size: 1.5rem; }
+  .symptomes h2 {
+    font-size: 1.2rem; }
+  .symptomes__grid {
+    grid-template-areas: 'areaFievre'  'areaVomissements'                        'areaRespiratoire' 'areaToux'; }
+  .symptomes__fievre {
+    grid-area: areaFievre; }
+  .symptomes__vomissements {
+    grid-area: areaVomissements;
+    margin: 45px 0; }
+  .symptomes__respiratoire {
+    grid-area: areaRespiratoire; }
+  .symptomes__toux {
+    margin: 15px 0;
+    grid-area: areaToux; } }
+
+@media screen and (min-width: 425px) and (max-width: 768px) {
+  .symptomes h1 {
+    font-size: 1.5rem; }
+  .symptomes h2 {
+    font-size: 1.2rem; }
+  .symptomes__grid {
+    display: contents;
+    width: 70%; } }
