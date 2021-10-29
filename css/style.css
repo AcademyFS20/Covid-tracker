@@ -58,3 +58,24 @@
 .symptomes__toux {
   margin: 15px 0;
   grid-area: areaToux; }
+
+.container__step {
+  display: flex; }
+
+.container__item {
+  display: block;
+  position: relative;
+  padding: 0 12px 25px;
+  border-bottom: 1px solid #1078ad;
+  color: #1078ad; }
+
+.container__item::before {
+  display: block;
+  position: absolute;
+  bottom: -5px;
+  left: calc(50% - 5px);
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #1078ad;
+  content: ''; }
