@@ -1,5 +1,11 @@
+<<<<<<< HEAD
 @import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;1,300;1,400&display=swap%27");
 @import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;1,300;1,400&family=Roboto+Mono:wght@700&display=swap%27");
+=======
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;1,300;1,400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;1,300;1,400&family=Roboto+Mono:wght@700&display=swap");
+/* Text color */
+>>>>>>> branche_hamza
 *,
 *::after,
 *::before {
@@ -10,6 +16,7 @@
 html {
   font-size: 62.5%; }
 
+<<<<<<< HEAD
 .section1 {
   background-color: #1078ad;
   padding-bottom: 20px;
@@ -64,6 +71,98 @@ html {
     height: 50px;
     border-radius: 5px;
     padding-top: 10px; }
+=======
+.header {
+  width: 100%;
+  background-color: #bfdbea;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  align-content: stretch; }
+  .header__logo {
+    margin-top: 0.5rem;
+    margin-left: 1rem; }
+  .header__nav {
+    margin: 5rem 5rem 2rem 6rem;
+    width: 40rem;
+    font-size: 2.4rem;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    align-items: flex-start;
+    align-content: stretch;
+    font-family: "Lato", sans-serif; }
+    .header__nav--conseil {
+      text-decoration: none;
+      color: #26519e; }
+    .header__nav--principale {
+      text-decoration: none;
+      color: #26519e; }
+
+.languebutton {
+  background-color: #bfdbea;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  color: #26519e;
+  text-align: center;
+  display: inline-flex;
+  font-size: 2.4rem;
+  cursor: pointer;
+  font-family: "Lato", sans-serif; }
+  .languebutton__image {
+    /*         display:inline-flex;
+ */
+    align-items: center;
+    padding: 0 1rem; }
+    .languebutton__image--brit {
+      width: 3.4rem; }
+
+.languebutton:hover {
+  background: #86c6e9; }
+
+.languebutton:active {
+  background: #56849c; }
+
+.info {
+  background-color: #f4cf1b;
+  text-align: center;
+  padding: 2rem 50rem; }
+  .info__titre {
+    font-size: 2.4rem;
+    font-family: "Roboto Mono", monospace; }
+  .info__texte {
+    color: #1479ac;
+    font-size: 2rem;
+    font-family: "Lato", sans-serif; }
+
+.section404 {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-items: center;
+  align-content: stretch; }
+  .section404__introuvable {
+    font-family: "Lato", sans-serif;
+    color: #2684b5;
+    font-size: 3rem; }
+  .section404__boutonprincipal {
+    margin: 3rem 0rem 1rem 0rem; }
+    .section404__boutonprincipal--bouton {
+      background-color: #2684b5;
+      border: none;
+      overflow: hidden;
+      color: white;
+      text-align: center;
+      display: inline-flex;
+      font-size: 3rem;
+      cursor: pointer;
+      font-family: "Lato", sans-serif;
+      padding: 3rem; }
+>>>>>>> branche_hamza
 
 .section3 {
   font-family: "Lato", sans-serif; }
@@ -106,7 +205,11 @@ html {
   color: #1078ad; }
 
 i {
+<<<<<<< HEAD
   color: #868165; }
+=======
+  color: #f4cf1b; }
+>>>>>>> branche_hamza
 
 .dive2 {
   margin-top: 20px;
@@ -122,6 +225,7 @@ i {
   height: 20px;
   background-color: #2684b5; }
 
+<<<<<<< HEAD
 .conseil1 {
   font-family: "Lato", sans-serif; }
   .conseil1__title {
@@ -234,3 +338,29 @@ i {
 @media screen and (min-width: 320px) {
   .conseil1__container--div p {
     font-size: 2rem; } }
+=======
+.section404 {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-items: center;
+  align-content: stretch; }
+  .section404__introuvable {
+    font-family: "Lato", sans-serif;
+    color: #2684b5;
+    font-size: 3rem; }
+  .section404__boutonprincipal {
+    margin: 3rem 0rem 1rem 0rem; }
+    .section404__boutonprincipal--bouton {
+      background-color: #2684b5;
+      border: none;
+      overflow: hidden;
+      color: white;
+      text-align: center;
+      display: inline-flex;
+      font-size: 3rem;
+      cursor: pointer;
+      font-family: "Lato", sans-serif;
+      padding: 3rem; }
+>>>>>>> branche_hamza
