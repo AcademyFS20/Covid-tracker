@@ -442,4 +442,51 @@ text-align:start; }
 .symptomes__toux {
   margin: 15px 0;
   grid-area: areaToux; }
-
+  .headmain
+  {
+    display:flex;
+    width:300px;
+    justify-content:space-between;
+  }
+  .headmain::after
+  {
+    content:"";
+    width:100px;
+    height:4px;
+    background-color:green;
+    display:block;
+  }
+  .headmain::before
+  {
+    content:"";
+    width:100px;
+    height:4px;
+    background-color:green;
+    display:block;
+  }
+  .headmain__pointblue
+  {
+      width:10px;
+      height:10px;
+      background-color:#2684b5;
+      border-radius:50%;
+      align-self:center;
+  }
+.headmain__pointprin
+{
+  width:30px;
+  height:30px;
+  background-color:#bfdbea;
+  border-radius:50%;
+  position:relative;
+}
+.headmain__pointprin--pointsecond
+{
+  width:10px;
+  height:10px;
+  background-color:#d1931f;
+  border-radius:50%;
+  position:absolute;
+  top:10px;
+  left:10px;
+}
