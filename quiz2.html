@@ -50,14 +50,19 @@
             <p class="headpara__para">Resultats</p>
         </div>
         <div class="progressbar">
-            <div class="progressbar__container" id="progressbar__container" name="progressbar__container">
+            <div class="progressbar__container">
                 <div class="progressbar__container--div"></div>
             </div>
+            <label class="progressbar__label" for="progressbar__container"><span class="progressbar__span"></span>/23</label>
         </div>
         <h2 class="main__title">Combien s'éleve ta température?</h2>
-        <form class="main__forminput">
-            <label class="main__form--label" for="temp">Température:</label>
-            <input class="main__form--input" type="number" placeholder="37" name="temp" id="temp">
+        <form class="main__form">
+            <!-- <div class="form-group">
+                <input class="main__form--radio" type="radio" name="reponse" id="oui" value="oui"><label class="main__form--label" for="oui">oui</label>
+            </div>
+            <div class="form-group">
+                <input class="main__form--radio" type="radio" name="reponse" id="non" value="non"><label class="main__form--label" for="non">non</label>
+            </div> -->
         </form>
         <div class="main__container">
             <a class="main__container--lien" href="#">Question précédente</a>
@@ -107,6 +112,6 @@
         </section>
         <section class="section4"></section>
     </footer>
-    <script src="app/app.js"></script>
+    <script src="app/app.js"></script>    
 </body>
 </html>
