@@ -14,3 +14,8 @@ function closeMenu() {
     hamburger.classList.remove("active");
     navMenu.classList.remove("active");
 }
+
+
+fetch('https://api.covid19api.com/dayone/country/morocco/status/confirmed')
+.then(res => res.json())
+.then(data=>console.log(data[100]));
