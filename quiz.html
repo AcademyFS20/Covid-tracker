@@ -20,25 +20,28 @@
             <div class="progressbar__container" id="progressbar__container" name="progressbar__container">
                 <div class="progressbar__container--div"></div>
             </div>
-            <label for="progressbar__container" class="progressbar__label"><span></span>/23</label>
+            <label for="progressbar__container" class="progressbar__label"><span class="progressbar__span"></span>/23</label>
         </div>
-        <h2 class="main__title">Otmane KSAANI</h2>
+        <h2 class="main__title"></h2>
         <form class="main__form">
-            <div class="form-group">
-                <input class="main__form--input" type="radio" name="choix" value="oui" id="oui" name="oui">
+            <!-- <div class="form-group">
+                <input class="main__form--input" type="radio" name="choix" value="oui" id="oui">
                 <label class="main__form--label" for="oui">Oui</label>
                 
             </div>
             <div class="form-group">
-                <input class="main__form--input" type="radio" name="choix" value="non" id="non" name="non">
+                <input class="main__form--input" type="radio" name="choix" value="non" id="non">
                 <label class="main__form--label" for="non">non</label>
                 
-            </div>
+            </div> -->
+            <label for="temp">Température:</label>
+            <input type="number" placeholder="37" class="main__form--input" id="temp" name="temp">
         </form>
         <div class="main__container">
-            <a href="#" class="main__container--lien">Question précedente</a>
-            <a href="#" class="main__container--lien">Question suivante</a>
+            <a href="#" class="main__container--lien lien-prec">Question précedente</a>
+            <a href="#" class="main__container--lien lien-suiv">Question suivante</a>
         </div>
     </main>
+    <script src="app/script.js"></script>
 </body>
 </html>
