@@ -134,11 +134,11 @@ suivant.addEventListener("click",function(){
     title.innerText=Tab[i];
     span.innerText=i;
 })
-suivant.addEventListener("click",function(){
-    i++;
-    if(i>Tab.length-1)
+precedent.addEventListener("click",function(){
+    i--;
+    if(i<1)
     {
-        i=Tab.length-1;
+        i=1;
     }
     if(i!=2 && i!=11 && i!=12 && i!=13 && i!=14 && i!=14 && i!=15 && i!=21 && i!=22 && i!=23)
     {
@@ -257,7 +257,7 @@ suivant.addEventListener("click",function(){
         }
     
     form.classList.add(`.main__form${i}`);
-    form.classList.remove(`.main__form${i-1}`);
+    form.classList.remove(`.main__form${i+1}`);
     progress.style.width=`${(i*(100/23))}%`;
     title.innerText=Tab[i];
     span.innerText=i;
