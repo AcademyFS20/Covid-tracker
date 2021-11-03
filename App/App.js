@@ -3,6 +3,7 @@ const Tab=["","Est ce que tu a la fiévre ces derniers jours","Quelle est ta tem
 const suivant=document.querySelectorAll(".main__container--lien")[1];
 const precedent=document.querySelectorAll(".main__container--lien")[0];
 const title=document.querySelector('.main__title');
+const headmain=document.querySelector('.headmain');
 const form=document.querySelector('.main__form');
 const progress=document.querySelector('.progressbar__container--div');
 const span=document.querySelector(".progressbar__span");
@@ -202,17 +203,17 @@ precedent.addEventListener('click',function(e){
 window.addEventListener("load",function(){
     progress.style.width=0;
     const div=document.createElement("div");
-    div.innerHTML=`<div class="containerSteper__preambule">
+    div.innerHTML=`<div class="containerSteper"><div class="containerSteper__preambule">
     <h1 class="containerSteper__titrePreambule"> Préambule</h1>
-    <p> L'application est fournie à titre gratuit, en l'état,
+    <p class="containerSteper__preambule--p"> L'application est fournie à titre gratuit, en l'état,
         uniquement à des finds d'informations pour contribuer à fluidifier 
         la prise en charge des personnes par les services d'urgences pendant
         l'épidémie de Coronavirus COVID-19. L'exhaustivité, l'exctitude, le caractère
         à jour des informations et contenus mis à disposition dans cette application,
         ou leur adéquation à des finalités particulières, ne sont pas garantis.
     </p>
-    <hr>
-    <p> L'utilisation de l'application et de son contenu ne remplace en aucun cas le 
+    <hr class="containerSteper__preambule--hr">
+    <p class="containerSteper__preambule--p"> L'utilisation de l'application et de son contenu ne remplace en aucun cas le 
         conseil nécessaire donné par votre médecin ou votre pharmacien ou tout autre 
         professionnel de santé  compétent dans chaque cas particulier. 
         Tout examen ou décision de l'utilisateur doit être réalisé ou prise de manière
@@ -226,8 +227,15 @@ window.addEventListener("load",function(){
 
 <button type="button" class="containerSteper--btn"> Démarrer le test </button>
 
-</div>`;
+</div></div>`;
     document.querySelector('.main').appendChild(div);
+    headmain.innerHTML=`<div class="headmain">
+    <div class="headmain__pointprin">
+        <div class="headmain__pointprin--pointsecond"></div>
+    </div>
+    <div class="headmain__pointblue"></div>
+    <div class="headmain__pointblue"></div>
+</div>`;
     span.innerText=0;
     title.style.display="none";
     form.style.display="none";
@@ -235,6 +243,17 @@ window.addEventListener("load",function(){
     const btn=document.querySelector('.containerSteper--btn');
     btn.addEventListener("click",function(){
         i=1;
+        // headmain.style.visibility="visible";
+        headmain.innerHTML=`<div class="headmain">
+    <div class="headmain__pointblue"></div>
+    <div class="headmain__pointprin">
+        <div class="headmain__pointprin--pointsecond"></div>
+    </div>
+    <div class="headmain__pointblue"></div>
+</div>`;
+        let pointprin=document.querySelector(".headmain__pointprin");
+        let style = window.getComputedStyle(pointprin, '::before');
+        pointprin.style.setProperty('--before','-120px');
         progress.style.width="4.5%"
         div.style.display="none";
         title.style.display="block";
