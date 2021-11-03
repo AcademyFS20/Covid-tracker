@@ -186,7 +186,7 @@ async function drawLineChart(url){
     const countries = getCountires(data)
     const totalConfirmed = getTotalConfirmed(data)
     const totalDeaths = getTotaldeaths(data)
-
+    let deaths = totalDeaths.map(item=> item*1000)
     
     const dataShart = {
         labels:countries,
@@ -198,7 +198,7 @@ async function drawLineChart(url){
           },
           {
             label: 'les décès',
-            data: totalDeaths,
+            data: deaths,
             backgroundColor: 'rgb(255, 255, 132)',
             hoverOffset: 4
           },
@@ -231,7 +231,7 @@ async function drawLineChart(url){
                   type: 'linear',
                   display: true,
                   position: 'right',
-                    
+                 
           
                   // grid line settings
                   grid: {
