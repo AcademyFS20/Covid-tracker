@@ -316,7 +316,8 @@ i {
 .main__title {
   color: #9a9a9a;
   font-size: 3rem;
-  text-align: center; }
+  text-align: center;
+  height: 80px; }
 
 .main__form {
   margin: 50px 0 10px 30%;
