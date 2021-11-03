@@ -1,3 +1,4 @@
+
 const Tab=["","Est ce que tu a la fiévre ces derniers jours","Quelle est ta température?","Est ce que tu avais la toux dans les jours précédents?","Avez vous des douleurs musculaires?","Est ce que ta gorge te fait mal?","Avez-vous de la diarrhée ces dernières 24 heures (au moins 3 selles molles) ? ","Avez-vous une fatigue inhabituelle ces derniers jours ?","Si oui cette fatigue vous oblige-t-elle à vous reposer plus de la moitié de la journée ? ","Avez-vous des difficultés importantes pour vous alimenter ou boire depuis plus de 24h","Avez-vous vu apparaître une gêne respiratoire ou une augmentation de votre gêne respiratoire habituelle ? ","Comment vous sentez-vous ? ","Avez-vous d’autre symptôme ? ","Quel est votre âge ?","Quel est votre poids ? Quelle est votre taille ?","Avez-vous de l’hypertension artérielle ? ","Êtes-vous diabétique ? ","Avez-vous ou avez-vous eu un cancer ? ","Avez-vous une maladie respiratoire ?","Avez-vous une insuffisance rénale chronique dialysée ?","Avez-vous une maladie chronique du foie ?","Êtes-vous enceinte ? ","Avez-vous une maladie connue pour diminuer vos défenses immunitaires?","Prenez-vous un traitement immunosuppresseur ? "];
 const suivant=document.querySelectorAll(".main__container--lien")[1];
 const precedent=document.querySelectorAll(".main__container--lien")[0];
@@ -5,7 +6,7 @@ const title=document.querySelector('.main__title');
 const form=document.querySelector('.main__form');
 const progress=document.querySelector('.progressbar__container--div');
 const span=document.querySelector(".progressbar__span");
-let i=1;
+let i=0;
 suivant.addEventListener('click',function(e){
     e.preventDefault();
     i++;
@@ -199,14 +200,56 @@ precedent.addEventListener('click',function(e){
     }
 })
 window.addEventListener("load",function(){
-    title.innerText=Tab[1];
-    span.innerText="1";
-    form.innerHTML=`<div class="form-group">
-    <input class="main__form--radio" type="radio" name="reponse" id="oui" value="oui"><label class="main__form--label" for="oui">oui</label>
+    progress.style.width=0;
+    const div=document.createElement("div");
+    div.innerHTML=`<div class="containerSteper__preambule">
+    <h1 class="containerSteper__titrePreambule"> Préambule</h1>
+    <p> L'application est fournie à titre gratuit, en l'état,
+        uniquement à des finds d'informations pour contribuer à fluidifier 
+        la prise en charge des personnes par les services d'urgences pendant
+        l'épidémie de Coronavirus COVID-19. L'exhaustivité, l'exctitude, le caractère
+        à jour des informations et contenus mis à disposition dans cette application,
+        ou leur adéquation à des finalités particulières, ne sont pas garantis.
+    </p>
+    <hr>
+    <p> L'utilisation de l'application et de son contenu ne remplace en aucun cas le 
+        conseil nécessaire donné par votre médecin ou votre pharmacien ou tout autre 
+        professionnel de santé  compétent dans chaque cas particulier. 
+        Tout examen ou décision de l'utilisateur doit être réalisé ou prise de manière
+        autonome sur la base de l'information scientifique et clinique pertinente, de 
+        la notice officielle du produit concerné le cas échéant et en cas de doute, en 
+        consultant un médecin compétent. 
+
+    </p>
+
 </div>
-<div class="form-group">
-    <input class="main__form--radio" type="radio" name="reponse" id="non" value="non"><label class="main__form--label" for="non">non</label>
+
+<button type="button" class="containerSteper--btn"> Démarrer le test </button>
+
 </div>`;
+    document.querySelector('.main').appendChild(div);
+    span.innerText=0;
+    title.style.display="none";
+    form.style.display="none";
+    document.querySelector('.main__container').style.display="none";
+    const btn=document.querySelector('.containerSteper--btn');
+    btn.addEventListener("click",function(){
+        i=1;
+        progress.style.width="4.5%"
+        div.style.display="none";
+        title.style.display="block";
+        form.style.display="block";
+        document.querySelector('.main__container').style.display="block";
+        title.innerText=Tab[1];
+        span.innerText="1";
+        form.innerHTML=`<div class="form-group">
+        <input class="main__form--radio" type="radio" name="reponse" id="oui" value="oui"><label class="main__form--label" for="oui">oui</label>
+        </div>
+        <div class="form-group">
+            <input class="main__form--radio" type="radio" name="reponse" id="non" value="non"><label class="main__form--label" for="non">non</label>
+        </div>`;
+    })
+    
 })
 
 
@@ -230,5 +273,50 @@ window.addEventListener("load",function(){
 
 
 
+
+
+
+const hamburger = document.querySelector(".hamburger");
+const navMenu = document.querySelector(".nav-menu");
+const navLink = document.querySelectorAll(".nav-link");
+
+hamburger.addEventListener("click", mobileMenu);
+navLink.forEach(n => n.addEventListener("click", closeMenu));
+
+function mobileMenu() {
+    hamburger.classList.toggle("active");
+    navMenu.classList.toggle("active");
+}
+
+function closeMenu() {
+    hamburger.classList.remove("active");
+    navMenu.classList.remove("active");
+}
+
+const API_KEY = '';
+const endpointWorld = 'https://api.covid19api.com/summary';
+const endpointMorocco = 'https://api.covid19api.com/dayone/country/morocco/status/confirmed'
+//const searchURL = 'https://api.themoviedb.org/3/search/movie?api_key='+API_KEY+'&query="';
+
+window.addEventListener('DOMContentLoaded',async() => {
+    const dataWord = await getData(endpointWorld);
+    console.log(dataWord);
+    const dataMorocco = await getData(endpointMorocco);
+    console.log(dataMorocco);
+    
+})
+
+async function getData(url){
+    const response = await fetch(url,{
+        mathid:'GET',
+        headers: {
+            'Content-type': 'application/json; charset =utf8'
+        }
+    })
+    
+    const data = await response.json();
+  
+    return data;
+}
 
 

@@ -5,11 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
-    <title>Document</title>
+    <title>Quiz</title>
 </head>
 <body>
-
-    <!-- header -->
     <header class="header">
         <nav class="navbar">
             <a href="#" class="nav-logo"><img src="images/logo__sante-50.svg" alt=""></a>
@@ -48,31 +46,45 @@
                 <p>N'arrêtez pas votre traitement! Consultez votre médecin ou votre pharmacien</p>
             </div>
     </header>
-
-    <!-- main -->
-
     <main>
-        <section class="section404">
-            <div class="section404__container">
-                <div class="image404">
-                    <img src="images/Capture.PNG" id="image404" alt="Capture">
-                </div>
-    
-                <div class="section404__introuvable">
-                    <h1>Page introuvable</h1>
-                </div>
-    
-                <div class="section404__boutonprincipal">
-                    <button class="section404__boutonprincipal--bouton"> PAGE PRINCIPALE </button>
-                </div>
-
+        <div class="headmain">
+            <div class="headmain__pointblue"></div>
+            <div class="headmain__pointprin">
+                <div class="headmain__pointprin--pointsecond"></div>
             </div>
-            
-        </section>
-
+            <div class="headmain__pointblue"></div>
+        </div>
+        <div class="headpara">
+            <p class="headpara__para">Informations</p>
+            <p class="headpara__para">Questionnaire</p>
+            <p class="headpara__para">Resultats</p>
+        </div>
+        <div class="progressbar">
+            <div class="progressbar__container" id="progressbar__container" name="progressbar__container">
+                <div class="progressbar__container--div"></div>
+            </div>
+            <label for="progressbar__container" class="progressbar__label"><span class="progressbar__span"></span>/23</label>
+        </div>
+        <h2 class="main__title"></h2>
+        <form class="main__form">
+            <!-- <div class="form-group">
+                <input class="main__form--input" type="radio" name="choix" value="oui" id="oui">
+                <label class="main__form--label" for="oui">Oui</label>
+                
+            </div>
+            <div class="form-group">
+                <input class="main__form--input" type="radio" name="choix" value="non" id="non">
+                <label class="main__form--label" for="non">non</label>
+                
+            </div>-->
+        </form>
+        <div class="main__container">
+            <a href="#" class="main__container--lien lien-prec">Question précedente</a>
+            <a href="#" class="main__container--lien lien-suiv">Question suivante</a>
+        </div>
     </main>
 
-    <!-- footer -->
+    
     <footer>
         <section class="section1">
             <h2 class="section1__title">Recommandations officielles</h2>
@@ -121,8 +133,6 @@
         </section>
         <section class="section4"></section>
     </footer>
-    <script src="https://kit.fontawesome.com/43565e0527.js" crossorigin="anonymous"></script>
-    <script src="App/App.js"></script>
-    
+    <script src="app/script.js"></script>
 </body>
 </html>
