@@ -157,11 +157,13 @@ $grey-light: #ededed;
     margin-top: 1.5%; }
   .containerSteper h1 {
     color: #2684b5;
-    text-align: center; }
+    text-align: center;
+    font-size: 2rem; }
   .containerSteper p {
     text-align: center;
     margin-bottom: 20%;
-    font-weight: bolder; }
+    font-weight: bolder;
+    font-size: 1.5rem; }
   .containerSteper hr {
     height: 2px;
     width: 50%;
