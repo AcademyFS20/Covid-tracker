@@ -33,6 +33,7 @@ getWolrdData()
     const {Countries} = reponse;
     
     const pays= Countries.map(({Country})=> Country);
+    /* console.log(pays.indexOf('Morocco')) */
     let maroc = pays.indexOf('Morocco');
 
     confirmedCasesToday.innerHTML=Countries[maroc].NewConfirmed;
