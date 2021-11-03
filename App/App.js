@@ -231,7 +231,7 @@ async function drawLineChart(url){
                   type: 'linear',
                   display: true,
                   position: 'right',
-                
+                    
           
                   // grid line settings
                   grid: {
