@@ -14,7 +14,7 @@ getData()
     console.log('erreur');
 });
 
-/******GET GLOBAL DATA WORLDWIDE *********/
+/******GET GLOBAL DATA WORLDWIDE *****/
 getWolrdData()
 .then(reponse => {
     const {Global} = reponse;
