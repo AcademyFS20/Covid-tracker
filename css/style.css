@@ -1,11 +1,8 @@
-<<<<<<< HEAD
+
 @import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;1,300;1,400&display=swap%27");
 @import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;1,300;1,400&family=Roboto+Mono:wght@700&display=swap%27");
-=======
-@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;1,300;1,400&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;1,300;1,400&family=Roboto+Mono:wght@700&display=swap");
-/* Text color */
->>>>>>> branche_hamza
+
+
 *,
 *::after,
 *::before {
@@ -16,7 +13,6 @@
 html {
   font-size: 62.5%; }
 
-<<<<<<< HEAD
 .section1 {
   background-color: #1078ad;
   padding-bottom: 20px;
@@ -71,7 +67,7 @@ html {
     height: 50px;
     border-radius: 5px;
     padding-top: 10px; }
-=======
+
 li {
   list-style: none; }
 
@@ -308,7 +304,7 @@ a {
     color: #1479ac;
     font-size: 2rem;
     font-family: "Lato", sans-serif; }
->>>>>>> branche_hamza
+
 
 .section3 {
   font-family: "Lato", sans-serif; }
@@ -321,41 +317,58 @@ a {
     margin-top: 10px;
     margin-bottom: 10px; }
 
-.dive {
-  width: 25%;
-  font-size: 2rem;
-  text-align: center; }
-  .dive__title1 {
-    color: #2684b5; }
-  .dive__title3, .dive__title5 {
-    color: green; }
-  .dive__list {
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
-    height: 100%; }
-    .dive__list--a {
-      text-decoration: none;
-      color: black;
-      font-weight: bold; }
+/* Text color */
+.container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-evenly;
+  align-items: center;
+  height: auto; }
+  .container__image {
+    width: 50%;
+    height: inherit; }
+    .container__image--img {
+      width: 100%;
+      height: 5%; }
+  .container__txt {
+    width: 50%;
+    text-align: center; }
+  .container__titre {
+    text-align: center;
+    color: #2684b5;
+    font-size: 2.5rem;
+    width: 100%; }
+  .container__paragraph {
+    font-size: 2rem;
+    color: #9a9a9a;
+    font-weight: bold; }
+  .container--btn {
+    background-color: #1078ad;
+    color: white;
+    width: 90%;
+    height: 3rem;
+    font-size: 2rem;
+    border: 0;
+    font-weight: bold; }
 
-#elm1 {
-  border-radius: 5px;
-  border: 1px solid #bfdbea;
-  padding: 5px;
-  font-size: 1.5rem; }
+
+.symptomes__title {
+  margin-top: 20px 20px;
+  color: #2684b5;
+  font-size: 2.5rem;
+  width: 100%;
+  text-align: center; }
+
 
 .elm2 {
   color: #1078ad; }
 
 i {
-<<<<<<< HEAD
+
   color: #d1931f; }
-=======
-  color: #f4cf1b; }
->>>>>>> branche_hamza
+
+
 
 .dive2 {
   margin-top: 20px;
@@ -371,7 +384,6 @@ i {
   height: 20px;
   background-color: #2684b5; }
 
-<<<<<<< HEAD
 @media screen and (max-width: 418px) {
   .dive p {
     font-size: 1.5rem; } }
@@ -615,7 +627,7 @@ i {
 @media screen and (max-width: 884px) and (min-width: 427px) {
   .progressbar {
     width: 60%; } }
-=======
+
 .section404 {
   width: 100%; }
   .section404__container {
@@ -650,4 +662,210 @@ i {
 
 #image404 {
   width: 100%; }
->>>>>>> branche_hamza
+
+.symptomes__grid {
+  display: grid;
+  grid-template-areas: 'areaVide1 areaFievre areaVomissements areaVide2' 
+ 'areaVide1 areaRespiratoire areaToux areaVide2';
+  text-align: center; }
+
+.symptomes__fievre {
+  grid-area: areaFievre; }
+
+.symptomes__vomissements {
+  grid-area: areaVomissements;
+  margin: 45px 0; }
+
+.symptomes__respiratoire {
+  grid-area: areaRespiratoire; }
+
+.symptomes__toux {
+  margin: 15px 0;
+  grid-area: areaToux; }
+
+/* nav-pregress bar */
+/*
+$brand-primary: $navBarColor;
+$white: #fff;
+$grey-light: #ededed;
+
+%remain-steps{
+  &:before {
+    content: counter(stepNum);
+    font-family: inherit;
+    font-weight: 700;
+  }
+  &:after{
+    background-color: $grey-light;
+  }
+}
+.containerSteper_multi-steps{
+  display: table;
+  table-layout: fixed;
+  width: 90%;
+  > li{
+    counter-increment: stepNum;
+    text-align: center;
+    display: table-cell;
+    position: relative;
+    color: $brand-primary;
+
+    &:before{
+      content: '\f00c';
+      content: '\2713;';
+      content: '\10003';
+      content: '\10004';
+      content: '\2713';
+      display: block;
+      margin: 0 auto 4px;
+      background-color: $white;
+      width: 36px;
+      height: 36px;
+      line-height: 32px;
+      text-align: center;
+      font-weight: bold;
+      border:{
+        width: 2px;
+        style: solid;
+        color: $brand-primary;
+        radius: 50%;
+      }
+    }
+    &:after{
+      content: '';
+      height: 2px;
+      width: 100%;
+      background-color: $brand-primary;
+      position: absolute;
+      top: 16px;
+      left: 50%;
+      z-index: -1;
+    }
+    &:last-child{
+      &:after{
+        display: none;
+      }
+    }
+
+    &.is-active{
+      @extend %remain-steps;
+      &:before{
+        background-color: $white;
+        border-color: $brand-primary;
+      }
+
+      ~ li{
+        color: #808080;
+        @extend %remain-steps;
+        &:before{
+          background-color: $grey-light;
+          border-color: $grey-light;
+        }
+      }
+    }
+  }
+}
+/* nav-pregress bar */
+.containerSteper {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: space-evenly;
+  align-items: center;
+  height: auto; }
+  .containerSteper__preambule {
+    background-color: lightblue;
+    width: 70%;
+    height: 90%;
+    margin-top: 1.5%; }
+  .containerSteper h1 {
+    color: #2684b5;
+    text-align: center; }
+  .containerSteper p {
+    text-align: center;
+    margin-bottom: 20%;
+    font-weight: bolder; }
+  .containerSteper hr {
+    height: 2px;
+    width: 50%;
+    background-color: #f4cf1b; }
+  .containerSteper--btn {
+    margin-top: 2.5%;
+    background-color: #1078ad;
+    color: white;
+    width: 50%;
+    height: 3rem;
+    font-size: 2rem;
+    border: 0;
+    font-weight: bold; }
+
+@media screen and (min-width: 320px) and (max-width: 425px) {
+  .container {
+    width: 100%;
+    display: flex;
+    flex-direction: column; }
+    .container__image {
+      display: none; }
+    .container h1 {
+      font-size: 1.5rem; }
+    .container p {
+      font-size: 1.2rem; }
+    .container button {
+      font-size: 0.80rem;
+      width: 80%;
+      height: 3rem; } }
+
+@media screen and (min-width: 425px) and (max-width: 768px) {
+  .container {
+    width: 100%;
+    display: flex;
+    flex-direction: column; }
+    .container__image {
+      display: none; }
+    .container h1 {
+      font-size: 1.5rem; }
+    .container p {
+      font-size: 1.2rem; }
+    .container button {
+      font-size: 0.80rem;
+      width: 80%;
+      height: 3rem; } }
+
+@media screen and (min-width: 320px) and (max-width: 425px) {
+  .symptomes h1 {
+    font-size: 1.5rem; }
+  .symptomes h2 {
+    font-size: 1.2rem; }
+  .symptomes__grid {
+    grid-template-areas: 'areaFievre' 
+ 'areaVomissements'                       
+ 'areaRespiratoire'
+ 'areaToux'; }
+  .symptomes__fievre {
+    grid-area: areaFievre; }
+  .symptomes__vomissements {
+    grid-area: areaVomissements;
+    margin: 45px 0; }
+  .symptomes__respiratoire {
+    grid-area: areaRespiratoire; }
+  .symptomes__toux {
+    margin: 15px 0;
+    grid-area: areaToux; } }
+
+@media screen and (min-width: 425px) and (max-width: 768px) {
+  .symptomes h1 {
+    font-size: 1.5rem; }
+  .symptomes h2 {
+    font-size: 1.2rem; }
+  .symptomes__grid {
+    display: contents;
+    width: 70%; } }
+
+@media screen and (min-width: 425px) and (max-width: 749px) {
+  .containerSteper--btn {
+    font-size: 1.5rem; } }
+
+@media screen and (max-width: 375px) {
+  .containerSteper--btn {
+    font-size: 1rem; } }
+

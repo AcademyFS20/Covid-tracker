@@ -1,10 +1,14 @@
 {
 <<<<<<< HEAD
+<<<<<<< HEAD
   "name": "noteapp",
 =======
   "type": "module",
   "name": "movie-app",
 >>>>>>> branche_hamza
+=======
+  "name": "noteapp",
+>>>>>>> branche_oussama
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
