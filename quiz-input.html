@@ -8,45 +8,35 @@
     <title>Quiz</title>
 </head>
 <body>
-    <header class="header">
-        <nav class="navbar">
-            <a href="#" class="nav-logo"><img src="images/logo__sante-50.svg" alt=""></a>
-            <ul class="nav-menu">
-                <li class="nav-item">
-                    <a href="#" class="nav-link">Conseil</a>
-                </li>
-                <li class="nav-item">
-                    <a href="#" class="nav-link">Acceuil</a>
-                </li>
-                <li class="nav-item nav-langue">
-                    <a href="#" class="nav-link langue">
-                        <span class="langue__texte"> Langue</span>
-                        <span class="langue__image">
-                            <img src="images/brit.png" alt="brit" class="langue__image--brit">
+    <header>
+        <div class="header">
+
+            <div class="header__logo">
+                <img src="Images/logo__sante-50.svg" class="header__logo--image" alt="Images">
+            </div> 
+
+            <div class="header__nav">
+
+                <div class="conseil">
+                    <a href="" class="header__nav--conseil"> Conseil</a>
+                </div>
+
+                <div class="acceuil">
+                    <a href="" class="header__nav--acceuil">Acceuil</a>
+                </div>
+
+                <div class="langue">
+                    <button type="button" class="languebutton">
+                        <span class="languebutton__texte"> Langue</span>
+                        <span class="languebutton__image">
+                            <img src="images/brit.png" alt="brit" class="languebutton__image--brit">
                         </span>
-                    </a>
-                </li>
-                
-            </ul>
-            <div class="hamburger">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
-            </div>
-        </nav>
-
-        <div class="info">
-
-            <div class="info__titre">
-                <h3>La dernière info Médicale</h3>
-            </div>
-    
-            <div class="info__texte">
-                <p>La prise d'anit-inflammatoires(ibuprofène, cortisone...) pourrait être un facteur d'aggravation de l'infection. En cas de fièvre, prenez du paracétamol.</p>
-                <p>N'arrêtez pas votre traitement! Consultez votre médecin ou votre pharmacien</p>
-            </div>
+                    </button>
+                </div>
+            </div>      
+        </div>
     </header>
-    <main>
+    <main class="main" style="position:relative;">
         <div class="headmain">
             <div class="headmain__pointblue"></div>
             <div class="headmain__pointprin">
@@ -55,7 +45,7 @@
             <div class="headmain__pointblue"></div>
         </div>
         <div class="headpara">
-            <p class="headpara__para">Informations</p>
+            <p class="headpara__para">informations</p>
             <p class="headpara__para">Questionnaire</p>
             <p class="headpara__para">Resultats</p>
         </div>
@@ -63,28 +53,17 @@
             <div class="progressbar__container" id="progressbar__container" name="progressbar__container">
                 <div class="progressbar__container--div"></div>
             </div>
-            <label for="progressbar__container" class="progressbar__label"><span class="progressbar__span"></span>/23</label>
         </div>
-        <h2 class="main__title"></h2>
-        <form class="main__form">
-            <!-- <div class="form-group">
-                <input class="main__form--input" type="radio" name="choix" value="oui" id="oui">
-                <label class="main__form--label" for="oui">Oui</label>
-                
-            </div>
-            <div class="form-group">
-                <input class="main__form--input" type="radio" name="choix" value="non" id="non">
-                <label class="main__form--label" for="non">non</label>
-                
-            </div>-->
+        <h2 class="main__title">Combien s'éleve ta température?</h2>
+        <form class="main__forminput">
+            <label class="main__form--label" for="temp">Température:</label>
+            <input class="main__form--input" type="number" placeholder="37" name="temp" id="temp">
         </form>
         <div class="main__container">
-            <a href="#" class="main__container--lien lien-prec">Question précedente</a>
-            <a href="#" class="main__container--lien lien-suiv">Question suivante</a>
+            <a class="main__container--lien" href="#">Question précédente</a>
+            <a class="main__container--lien" href="#">Question suivante</a>
         </div>
     </main>
-
-    
     <footer>
         <section class="section1">
             <h2 class="section1__title">Recommandations officielles</h2>
@@ -104,15 +83,10 @@
                 </div>
             </div>
         </section>
-        <section class="section2">
-            <h2 class="section2__title">Vous pensez avoir été exposé au Coronavirus COVID-19 et avez des symptomes?</h2>
-            <img class="section2__image" src="Images/1f637.svg">
-            <a href="#" class="section2__a">Demarrer le test</a>
-        </section>
         <section class="section3">
             <img class="section3__image" src="Images/logo__sante-1.svg">
             <div class="section3__div">
-                <div class="dive">
+                <div class="dive dive1">
                     <ul class="dive__list">
                         <li class="dive__list--elm" id="elm1"><a class="dive__list--a" href="#">FRAN  <i class="fas fa-globe"></i></a></li>
                         <li class="dive__list--elm"><a class="dive__list--a elm2" href="#">Accueil</a></li>
@@ -133,6 +107,6 @@
         </section>
         <section class="section4"></section>
     </footer>
-    <script src="app/script.js"></script>
+    <script src="app/app.js"></script>
 </body>
 </html>
