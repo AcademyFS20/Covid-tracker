@@ -7,7 +7,7 @@ const endpointMorocco = 'https://api.covid19api.com/dayone/country/morocco/statu
 
 const ctx = document.getElementById('myChart').getContext('2d')
 const ctxBar = document.getElementById('myBarChart').getContext('2d')
-
+const ctxLine = document.getElementById('myLineChart').getContext('2d')
 
 window.addEventListener('DOMContentLoaded',async() => {
     const dataWord = await getData(endpointWorld);
@@ -19,6 +19,8 @@ window.addEventListener('DOMContentLoaded',async() => {
     
     drawPieChart(endpointWorld);
     drawBarChart(endpointMorocco);
+    drawLineChart(endpointWorld);
+  
     
 })
 
@@ -79,9 +81,8 @@ async function drawPieChart(url){
 
 async function drawBarChart(url){
     const dataMorocco = await getData(url);
-
     const dataMoroccoLast15Days = dataMorocco.slice(dataMorocco.length-15, dataMorocco.length) //recuperer les donnés des15 derniers jours
-    console.log(dataMoroccoLast15Days);
+    //console.log(dataMoroccoLast15Days);
 
 function numberCases(data){
     let cases = []
@@ -98,41 +99,42 @@ function datesCases(data){
     })
     return dates;
 }
-    console.log(numberCases(dataMoroccoLast15Days));
-    console.log(datesCases(dataMoroccoLast15Days));
+    // console.log(numberCases(dataMoroccoLast15Days));
+    //console.log(datesCases(dataMoroccoLast15Days));
 
 const config = {
         type: 'bar',
         data: {
                 labels: datesCases(dataMoroccoLast15Days),
-                datasets: [{ label: 'Case numbers', 
-                            data: numberCases(dataMoroccoLast15Days)}],
-                backgroundColor: [
-                    'rgba(255, 99, 132, 0.2)',
-                    'rgba(255, 159, 64, 0.2)',
-                    'rgba(255, 205, 86, 0.2)',
-                    'rgba(75, 192, 192, 0.2)',
-                    'rgba(54, 162, 235, 0.2)',
-                    'rgba(153, 102, 255, 0.2)',
-                    'rgba(201, 203, 207, 0.2)',
-                    'rgba(255, 80, 132, 0.2)',
-                    'rgba(255, 50, 64, 0.2)',
-                    'rgba(255, 70, 86, 0.2)',
-                    'rgba(75, 66, 192, 0.2)',
-                    'rgba(54, 162, 235, 0.2)',
-                    'rgba(153, 102, 110, 0.2)',
-                    'rgba(201, 203, 1, 0.2)',
-                    'rgba(201, 2500, 20, 0.2)'
-
-
-                ]
-                ,
-                
-                borderColor: '#777',
-                  
-                borderWidth: 1,
-                hoveredBorderColor: '#000',
-                hoverBorderWidth:2,
+                datasets: [
+                    { label: 'Case numbers', 
+                        data: numberCases(dataMoroccoLast15Days),
+                        backgroundColor: [
+                            'rgb(255, 99, 132)',
+                            'rgb(54, 162, 235)',
+                            'rgb(220, 205, 86)',
+                            'rgb(120, 105, 86)',
+                            'rgb(130, 5, 86)',
+                            'rgb(155, 99, 132)',
+                            'rgb(54, 162, 235)',
+                            'rgb(20, 205, 86)',
+                            'rgb(40, 105, 86)',
+                            'rgb(10, 66, 86)',
+                            'rgb(90, 99, 132)',
+                            'rgb(80, 162, 235)',
+                            'rgb(44, 205, 86)',
+                            'rgb(25, 105, 86)',
+                            'rgb(66, 5, 86)'
+                        ],
+                        
+                        borderColor: '#777',
+                          
+                        borderWidth: 2,
+                        hoveredBorderColor: '#000',
+                        hoverBorderWidth:2,
+                        
+                        }],
+             
                 options:{
                     title:{
                         display:true,
@@ -147,40 +149,101 @@ const config = {
 }
 
 
+function getCountires(data){
+  
+    let countries = [];
+    data.Countries.forEach(element=>{
+        countries.push(element.Country);
+        
+    })
+   console.log(countries)
+    return countries;
+}
+
+
+function getTotalConfirmed(data){
+    let totalConf = [];
+    data.Countries.forEach(element=>{
+        totalConf.push(element.TotalConfirmed);
+        
+    })
+    console.log(totalConf);
+    return totalConf;
+}
+
+function getTotaldeaths(data){
+    let totalDeaths = [];
+    data.Countries.forEach(element=>{
+        totalDeaths.push(element.TotalDeaths);
+        
+    })
+    console.log(totalDeaths);
+    return totalDeaths;
+}
+
 async function drawLineChart(url){
     const data = await getData(url)
-    const totalConfirmed = data.Global.TotalConfirmed
-    const totalDeaths = data.Global.TotalDeaths
-    const countries = data.Global.Country
+    const countries = getCountires(data)
+    const totalConfirmed = getTotalConfirmed(data)
+    const totalDeaths = getTotaldeaths(data)
 
+    
     const dataShart = {
-        labels:[
-            'nouveaux cas confirmés',
-            'total cas cnfirmés',
-            'nouveau décès',
-            'total des décès',
-            'total rétablis'
-        ],
+        labels:countries,
         datasets: [{
-            label: 'World Summary',
-            data: [newConfirmed, totalConfirmed, newDeaths,totalDeaths,totalRecovered],
-            backgroundColor: [
-              'rgb(255, 99, 132)',
-              'rgb(54, 162, 235)',
-              'rgb(255, 205, 86)',
-              'rgb(255, 105, 86)',
-              'rgb(255, 5, 86)'
-            ],
+            label: 'les cas confirmés',
+            data: totalConfirmed,
+            backgroundColor: 'rgb(255, 99, 132)',
             hoverOffset: 4
-          }]
+          },
+          {
+            label: 'les décès',
+            data: totalDeaths,
+            backgroundColor: 'rgb(255, 255, 132)',
+            hoverOffset: 4
+          },
+            ]
         };
 
-    const config = {
-        type: 'doughnut',
-        data: dataShart,
-      };
+        const config = {
+            type: 'line',
+            data: dataShart,
+            options: {
+              responsive: true,
+              interaction: {
+                mode: 'index',
+                intersect: false,
+              },
+              stacked: false,
+              plugins: {
+                title: {
+                  display: true,
+                  text: 'informations sur les cas Covid 19'
+                }
+              },
+              scales: {
+                y: {
+                  type: 'linear',
+                  display: true,
+                  position: 'left',
+                },
+                y1: {
+                  type: 'linear',
+                  display: true,
+                  position: 'right',
+                
+          
+                  // grid line settings
+                  grid: {
+                    drawOnChartArea: false, // only want the grid lines for one axis to show up
+                  },
+                },
+                
+              }
+            },
+          };
 
-   const myChart = new Chart(ctx,config)
+   const myChart = new Chart(ctxLine,config)
 
 
 }
