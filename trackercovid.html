@@ -5,24 +5,77 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="css/style.css">
     <title>Document</title>
 </head>
 <body>
+  <header class="header">
+    <nav class="navbar">
+        <a href="#" class="nav-logo"><img src="images/logo__sante-50.svg" alt=""></a>
+        <ul class="nav-menu">
+            <li class="nav-item">
+                <a href="#" class="nav-link">Conseil</a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link">Acceuil</a>
+            </li>
+            <li class="nav-item nav-langue">
+                <a href="#" class="nav-link langue">
+                    <span class="langue__texte"> Langue</span>
+                    <span class="langue__image">
+                        <img src="images/brit.png" alt="brit" class="langue__image--brit">
+                    </span>
+                </a>
+            </li>
+            
+        </ul>
+        <div class="hamburger">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+    </nav>
+</header>
 
-    <div>
-        <canvas id="myChart"></canvas>
-      </div>
 
-      <div>
-        <canvas id="Chart"></canvas>
-      </div>
+<main>
+  <div class="covidtracker">
+    <div class="covidtracker__container">
+      <h2> STATISTIQUE ET VISUALISATION DE DONNEES COVID 19</h2>
+      <p>CovidTracker est un outil permettant de suivre l'évolution de l'épidémie à Coronavirus au monde entier</p>
+      <h2>EN UN COUP D'OEIL</h2>
+      <p id="datejour"> </p>
+    </div>
     
-      <div>
-        <canvas id="worldChart"></canvas>
-      </div>
+    <div class="covidtracker__casmaroc">
+      <form >
+        <label for="fname">Nouveaux cas confirmés aujourd'hui:</label>
+        <p id="confirmedCasesToday"></p>
+        <!-- <input type="text" id="confirmedCasesToday"  name="fname"> --><br><br>
+        <label for="lname">Total des cas confirmés:</label>
+        <p id="totalConfirmedCases"></p>
+        <!-- <input type="text" id="totalConfirmedCases" name="lname"> --><br><br>
+        <label for="lname">Total des decés:</label>
+        <p id="totalDeaths"></p>
+        <!-- <input type="text" id="totalDeaths" name="lname"> --><br><br>
+      </form>
+        <canvas id="myChart"></canvas>
+    </div>
+  
+    <div class="covidtracker__casmonde1">
+      <h1>WORLD SUMMARY</h1>
+      <p id="datejour"></p>
+      <canvas id="Chart"></canvas>
+    </div>
+      
+    <div class="covidtracker__casmonde2">
+      <canvas id="worldChart"></canvas>
+    </div>
+  </div>
+</main>
 
+  
 
     <script src="App/api_app.js"></script>
-    
 </body>
 </html>

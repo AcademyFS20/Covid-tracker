@@ -339,3 +339,14 @@ i {
 
 #image404 {
   width: 100%; }
+
+.covidtracker {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: stretch;
+  align-content: stretch; }
+  .covidtracker__container, .covidtracker__casmaroc {
+    font-size: 20px; }

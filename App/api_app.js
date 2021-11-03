@@ -2,12 +2,24 @@
 let api_url_Morocco ='https://api.covid19api.com/dayone/country/morocco/status/confirmed';
 let api_url_world='https://api.covid19api.com/summary';
 
+const d = new Date();
+let text = d.toLocaleString("en-US");
+document.getElementById("datejour").innerHTML = text;
+
+let confirmedCasesToday = document.getElementById("confirmedCasesToday");
+let totalConfirmedCases = document.getElementById("totalConfirmedCases");
+let totalDeaths = document.getElementById("totalDeaths");
+
+
 
 /*****GET DATA FROM MOROCCO *********/
 getData()
 .then(reponse=>{
     let caseNumbers = reponse.map(({Cases})=>Cases);
     let dates= res.map(({Date})=>Date);
+    let today= caseNumbers.slice(-1);
+  
+    totalConfirmedCases.innerHTML=today[0];
     showCases(dates,caseNumbers)
 })
 .catch(erreur=>{
@@ -19,7 +31,14 @@ getWolrdData()
 .then(reponse => {
     const {Global} = reponse;
     const {Countries} = reponse;
+    
     const pays= Countries.map(({Country})=> Country);
+    let maroc = pays.indexOf('Morocco');
+
+    confirmedCasesToday.innerHTML=Countries[maroc].NewConfirmed;
+
+    totalDeaths.innerHTML=Countries[maroc].TotalDeaths;
+
     const casConfirm = Countries.map(({TotalConfirmed})=>TotalConfirmed);
     const casDeces = Countries.map(({TotalDeaths})=>TotalDeaths);
     showWorldData(Global);
@@ -31,9 +50,6 @@ getWolrdData()
 async function getData(){
     reponse = await fetch(api_url_Morocco);
     res = await reponse.json();
-    /* let cases= res.map(({Cases,Country})=>[Cases,Country]);
-    let caseNumbers = res.map(({Cases})=>Cases);
-    let dates= res.map(({Date})=>Date); */
     return res;
 }
 
@@ -53,7 +69,7 @@ function showCases(dates,caseNumbers){
      const data = {
        labels: labels,
        datasets: [{
-         label: 'My First dataset',
+         label: 'Evolution des cas au Maroc',
          backgroundColor: 'rgb(255, 99, 132)',
          borderColor: 'rgb(255, 99, 132)',
          data: caseNumbers,
