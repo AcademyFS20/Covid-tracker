@@ -420,19 +420,30 @@ window.addEventListener("load",function(){
 
 
             // Algorithme de Covid
+
 form.addEventListener("change",function()
 {
     let input=document.querySelectorAll("input");
     if(i==2 || i==12)
     {
         Res[i]=[...input][0].value;
-        console.log(Res[i]);
+        // console.log(Res[i]);
+        // if(i==2)
+        // {
+        //     const temp=Res[i];
+        // }
+        // if(i==12)
+        // {
+        //     const symp=Res[i];
+        // }
     }
     else if(i==14)
     {
         let taille=document.querySelector("[name='taille']")
         let poids=document.querySelector("[name='poids']")
         Res[i]="";
+        const poid=Res[i];
+        
         // console.log(poids)
         // console.log([...input][0].value)
         // console.log([...input][1].value)
@@ -440,15 +451,61 @@ form.addEventListener("change",function()
         // Res[i][1]=[...input][1].value;
         
     }
+    
     for(let j=0;j<input.length;j++)
     {
         if(input[j].checked)
         {
             // console.log(input[j].value);
             Res[i]=input[j].value;
-            console.log(i+" "+Res[i]);
+            // console.log(i+" "+Res[i]);
         }
-    } 
+    }
+    if(i==23)
+    {
+        console.log(Res);
+        // const cancer=Res[17];
+        // console.log(cancer);
+        const [empty,fievre,temp,toux,muscle,gorge,diahree,fatigue,repos,boire,gene,sent,symp,age,poids,hyper,diab,cancer,respir,dialys,foie,enceinte,defense,immun]=Res;
+        console.log(temp);
+        console.log(age);
+        console.log(symp);
+        console.log(enceinte);
+    }
+    // if(i==1)
+    // {
+    //     const fievre=Res[i];
+    // }
+    // else if(i==3)
+    // {
+    //     const toux=Res[i];
+    // }
+    // else if(i==4)
+    // {
+    //     const muscle=Res[i];
+    // }
+    // else if(i==5)
+    // {
+    //     const gorge=Res[i];
+    // }
+    // else if(i==6)
+    // {
+    //     const diahree=Res[i];
+    // }
+    // else if(i==7)
+    // {
+    //     let fatigue=Res[i];
+    // }
+    // else if(i==8)
+    // {
+    //     const repos=Res[i];
+    // }
+    // else if(i==5)
+    // {
+    //     const gorge=Res[i];
+    // } 
 })
-console.log(Res)
+// console.log(Res)
+// const [fievre,temp,toux,muscle,gorge,diahree,fatigue,repos,boire,gene,sent,symp,age,poids,hyper,diab,cancer,respir,dialys,foie,enceinte,defense,immun]=Res;
+
  
