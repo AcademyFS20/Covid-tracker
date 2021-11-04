@@ -8,6 +8,7 @@ const form=document.querySelector('.main__form');
 const progress=document.querySelector('.progressbar__container--div');
 const span=document.querySelector(".progressbar__span");
 let i=0;
+let Res=[];
 suivant.addEventListener('click',function(e){
     e.preventDefault();
     i++;
@@ -19,6 +20,7 @@ suivant.addEventListener('click',function(e){
     progress.style.width=`${(100/(Tab.length-1))*i}%`;
     form.classList.add(`.main__form${i}`)
     form.classList.remove(`.main__form${i-1}`)
+    
     if((i==1)||(i>2 && i<11)||(i>11 && i<12) || (i>12 && i<13) || (i>13 && i<14) || (i>14 && i<15) || (i>15 && i<21) || (i>21 && i<22) || (i>22 && i<23))
     {
         form.innerHTML=`<div class="form-group">
@@ -27,7 +29,19 @@ suivant.addEventListener('click',function(e){
     <div class="form-group">
         <input class="main__form--radio" type="radio" name="reponse" id="non" value="non"><label class="main__form--label" for="non">non</label>
     </div>`;
+    // form.addEventListener("change",function()
+    // {
+    //     let input=document.querySelectorAll("input");
+    //     for(let j=0;j<input.length;j++)
+    //     {
+    //         if(input[j].checked)
+    //         {
+    //             console.log(input[j].value);
+    //         }
+    //     }
+    // })
     }
+
     else if(i==11)
     {
         form.innerHTML=`<div class="form-group">
@@ -43,16 +57,33 @@ suivant.addEventListener('click',function(e){
         <input class="main__form--radio" type="radio" name="reponse" id="tres" value="tres mal"><label class="main__form--label" for="tres">Tres mal</label>
     </div>
     `;
+    // form.addEventListener("change",function()
+    // {
+    //     let input=document.querySelectorAll("input");
+    //     for(let j=0;j<input.length;j++)
+    //     {
+    //         if(input[j].checked)
+    //         {
+    //             console.log(input[j].value);
+    //         }
+    //     }
+    // })
     }
+    
     else if(i==2)
     {
         form.innerHTML=`<label class="main__form--label" for="temp">Température:</label>
         <input class="main__form--input" type="number" placeholder="37" name="temp" id="temp">`;
+        // let input=document.querySelector('input');
+        // console.log(input.value);
     }
     else if(i==12)
     {
         form.innerHTML=`<label class="main__form--label" for="symp">Symptomes:</label>
         <input class="main__form--input" type="text" placeholder="symptomes" name="sump" id="sump">`;
+        let input=document.querySelector('input');
+        // Res[i]=input.value;
+        // alert(Res[i]);
     }
     
     else if(i==13)
@@ -70,6 +101,18 @@ suivant.addEventListener('click',function(e){
         <input class="main__form--radio" type="radio" name="reponse" id="inf15" value="inf15"><label class="main__form--label" for="inf15"><15ans</label>
     </div>
     `;
+    // form.addEventListener("change",function()
+    // {
+    //     let input=document.querySelectorAll("input");
+    //     for(let j=0;j<input.length;j++)
+    //     {
+    //         if(input[j].checked)
+    //         {
+    //             Res[i]=input[j].value;
+    //         }
+    //     }
+    //     alert(Res[i])
+    // })
     }
     else if(i==14)
     {
@@ -77,6 +120,10 @@ suivant.addEventListener('click',function(e){
         <input class="main__form--input" type="number" placeholder="Taille" name="taille" id="taille"></div>
         <div class="form-group"><label class="main__form--label" for="poid">Poids:</label>
         <input class="main__form--input" type="number" placeholder="Poids" name="poids" id="poids"></div>`;
+        // let input=document.querySelectorAll('input');
+        // Res[i][0]=input[0].value;
+        // Res[i][1]=input[1].value;
+        // alert(Res[i]);
     }
     else if((i==15)||(i==22)||(i==23))
     {
@@ -88,7 +135,19 @@ suivant.addEventListener('click',function(e){
     </div>
     <div class="form-group">
         <input class="main__form--radio" type="radio" name="reponse" id="ne-sais-pas" value="ne-sais-pas"><label class="main__form--label" for="ne-sais-pas">ne sais pas</label>
-    </div>`
+    </div>`;
+    // form.addEventListener("change",function()
+    // {
+    //     let input=document.querySelectorAll("input");
+    //     for(let j=0;j<input.length;j++)
+    //     {
+    //         if(input[j].checked)
+    //         {
+    //             Res[i]=input[j].value;
+    //         }
+    //     }
+    //     alert(Res[i])
+    // })
     }
     else if(i==21)
     {
@@ -102,6 +161,18 @@ suivant.addEventListener('click',function(e){
         <input class="main__form--radio" type="radio" name="reponse" id="non-applicable" value="non-applicable"><label class="main__form--label" for="non-applicable">Non applicable</label>
     </div>`
     }
+    // form.addEventListener("change",function()
+    // {
+    //     let input=document.querySelectorAll("input");
+    //     for(let j=0;j<input.length;j++)
+    //     {
+    //         if(input[j].checked)
+    //         {
+    //             Res[i]=input[j].value;
+    //         }
+    //     }
+    //     alert(Res[i])
+    // })
     span.innerText=i;
 })
 precedent.addEventListener('click',function(e){
@@ -260,6 +331,7 @@ window.addEventListener("load",function(){
         form.style.display="block";
         document.querySelector('.main__container').style.display="block";
         title.innerText=Tab[1];
+        form.classList.add(`.main__form${1}`)
         span.innerText="1";
         form.innerHTML=`<div class="form-group">
         <input class="main__form--radio" type="radio" name="reponse" id="oui" value="oui"><label class="main__form--label" for="oui">oui</label>
@@ -295,47 +367,88 @@ window.addEventListener("load",function(){
 
 
 
-const hamburger = document.querySelector(".hamburger");
-const navMenu = document.querySelector(".nav-menu");
-const navLink = document.querySelectorAll(".nav-link");
+// const hamburger = document.querySelector(".hamburger");
+// const navMenu = document.querySelector(".nav-menu");
+// const navLink = document.querySelectorAll(".nav-link");
 
-hamburger.addEventListener("click", mobileMenu);
-navLink.forEach(n => n.addEventListener("click", closeMenu));
+// hamburger.addEventListener("click", mobileMenu);
+// navLink.forEach(n => n.addEventListener("click", closeMenu));
 
-function mobileMenu() {
-    hamburger.classList.toggle("active");
-    navMenu.classList.toggle("active");
-}
+// function mobileMenu() {
+//     hamburger.classList.toggle("active");
+//     navMenu.classList.toggle("active");
+// }
 
-function closeMenu() {
-    hamburger.classList.remove("active");
-    navMenu.classList.remove("active");
-}
+// function closeMenu() {
+//     hamburger.classList.remove("active");
+//     navMenu.classList.remove("active");
+// }
 
-const API_KEY = '';
-const endpointWorld = 'https://api.covid19api.com/summary';
-const endpointMorocco = 'https://api.covid19api.com/dayone/country/morocco/status/confirmed'
-//const searchURL = 'https://api.themoviedb.org/3/search/movie?api_key='+API_KEY+'&query="';
+// const API_KEY = '';
+// const endpointWorld = 'https://api.covid19api.com/summary';
+// const endpointMorocco = 'https://api.covid19api.com/dayone/country/morocco/status/confirmed'
+// //const searchURL = 'https://api.themoviedb.org/3/search/movie?api_key='+API_KEY+'&query="';
 
-window.addEventListener('DOMContentLoaded',async() => {
-    const dataWord = await getData(endpointWorld);
-    console.log(dataWord);
-    const dataMorocco = await getData(endpointMorocco);
-    console.log(dataMorocco);
+// window.addEventListener('DOMContentLoaded',async() => {
+//     const dataWord = await getData(endpointWorld);
+//     console.log(dataWord);
+//     const dataMorocco = await getData(endpointMorocco);
+//     console.log(dataMorocco);
     
-})
+// })
 
-async function getData(url){
-    const response = await fetch(url,{
-        mathid:'GET',
-        headers: {
-            'Content-type': 'application/json; charset =utf8'
-        }
-    })
+// async function getData(url){
+//     const response = await fetch(url,{
+//         mathid:'GET',
+//         headers: {
+//             'Content-type': 'application/json; charset =utf8'
+//         }
+//     })
     
-    const data = await response.json();
+//     const data = await response.json();
   
-    return data;
-}
+//     return data;
+// }
 
 
+
+
+
+
+
+
+
+
+            // Algorithme de Covid
+form.addEventListener("change",function()
+{
+    let input=document.querySelectorAll("input");
+    if(i==2 || i==12)
+    {
+        Res[i]=[...input][0].value;
+        console.log(Res[i]);
+    }
+    else if(i==14)
+    {
+        let taille=document.querySelector("[name='taille']")
+        let poids=document.querySelector("[name='poids']")
+        Res[i]="";
+        // console.log(poids)
+        // console.log([...input][0].value)
+        // console.log([...input][1].value)
+        // Res[i][0]=[...input][0].value;
+        // Res[i][1]=[...input][1].value;
+        
+    }
+    for(let j=0;j<input.length;j++)
+    {
+        if(input[j].checked)
+        {
+            // console.log(input[j].value);
+            Res[i]=input[j].value;
+            console.log(i+" "+Res[i]);
+        }
+    } 
+})
+console.log(Res)
+ 
