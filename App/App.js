@@ -427,15 +427,6 @@ form.addEventListener("change",function()
     if(i==2 || i==12)
     {
         Res[i]=[...input][0].value;
-        // console.log(Res[i]);
-        // if(i==2)
-        // {
-        //     const temp=Res[i];
-        // }
-        // if(i==12)
-        // {
-        //     const symp=Res[i];
-        // }
     }
     else if(i==14)
     {
@@ -444,11 +435,6 @@ form.addEventListener("change",function()
         Res[i]="";
         const poid=Res[i];
         
-        // console.log(poids)
-        // console.log([...input][0].value)
-        // console.log([...input][1].value)
-        // Res[i][0]=[...input][0].value;
-        // Res[i][1]=[...input][1].value;
         
     }
     
@@ -456,56 +442,118 @@ form.addEventListener("change",function()
     {
         if(input[j].checked)
         {
-            // console.log(input[j].value);
             Res[i]=input[j].value;
-            // console.log(i+" "+Res[i]);
         }
     }
     if(i==23)
     {
+        const Reponse="";
         console.log(Res);
-        // const cancer=Res[17];
-        // console.log(cancer);
         const [empty,fievre,temp,toux,muscle,gorge,diahree,fatigue,repos,boire,gene,sent,symp,age,poids,hyper,diab,cancer,respir,dialys,foie,enceinte,defense,immun]=Res;
-        console.log(temp);
-        console.log(age);
-        console.log(symp);
-        console.log(enceinte);
+        
+        /******** Code Algorithme */
+         
     }
-    // if(i==1)
-    // {
-    //     const fievre=Res[i];
-    // }
-    // else if(i==3)
-    // {
-    //     const toux=Res[i];
-    // }
-    // else if(i==4)
-    // {
-    //     const muscle=Res[i];
-    // }
-    // else if(i==5)
-    // {
-    //     const gorge=Res[i];
-    // }
-    // else if(i==6)
-    // {
-    //     const diahree=Res[i];
-    // }
-    // else if(i==7)
-    // {
-    //     let fatigue=Res[i];
-    // }
-    // else if(i==8)
-    // {
-    //     const repos=Res[i];
-    // }
-    // else if(i==5)
-    // {
-    //     const gorge=Res[i];
-    // } 
+    
 })
-// console.log(Res)
-// const [fievre,temp,toux,muscle,gorge,diahree,fatigue,repos,boire,gene,sent,symp,age,poids,hyper,diab,cancer,respir,dialys,foie,enceinte,defense,immun]=Res;
 
- 
+
+function FPEQUAL0()
+{
+    if((age!='sup70')&&(hyper=='non')&&(diab=='non')&&(cancer=='non')&&(respir=='non')&&(dialys=='non')&&((enceinte=='non')||(enceinte=='non-applicable'))&&(defense=='non')&&(immun=='non'))
+    {
+        return true;
+    }
+    else
+    {
+        return false;
+    }
+}
+function FGEQUAL0()
+{
+    if((fievre<39)&&(fatigue=='non')&&("!sensation de malaise")&&(gene=='non')&&(boire=='non')&&(fievre>35.4))
+    {
+        return true;
+    }
+    else
+    {
+        return false;
+    }
+}
+function FGMINSUP1()
+{
+    if((fievre>=39)||(fatigue=='oui')||("sensation de malaise"))
+    {
+        return true;
+    }
+    else
+    {
+        return false;
+    }
+}
+function FGMINEQUAL1()
+{
+    if(((fievre>=39)&&(fatigue=='non')&&("!sensation de malaise"))||((fievre<39)&&(fatigue=='oui')&&("!sensation de malaise"))||((fievre<39)&&(fatigue=='non')&&("sensation de malaise")))
+    {
+        return true;
+    }
+    else
+    {
+        return false;
+    }
+}
+function FGMINSUP2()
+{
+    if(((fievre>=39)&&(fatigue=='oui')&&("!sensation de malaise"))||((fievre>=39)&&(fatigue=='non')&&("sensation de malaise"))||((fievre<39)&&(fatigue=='oui')&&("sensation de malaise")))
+    {
+        return true;
+    }
+    else
+    {
+        return false;
+    }
+}
+function FPSUP1()
+{
+    if((age=='sup70')||(hyper=='oui')||(diab=='oui')||(cancer=='oui')||(respir=='oui')||(dialys=='oui')||(enceinte=='oui')||(defense=='oui')||(immun=='oui'))
+    {
+        return true;
+    }
+    else
+    {
+        return false;
+    }
+}
+function FGMAJEQUAL0()
+{
+    if(gene=='non'&&boire=='non'&&fievre>35.4)
+    {
+        return true;
+    }
+    else
+    {
+        return false;
+    }
+}
+function FGMAJSUP1()
+{
+    if(gene=='oui'||boire=='oui'||fievre<=35.4)
+    {
+        return true;
+    }
+    else
+    {
+        return false;
+    }
+}
+function FGSUP1()
+{
+    if((fievre>=39)||(fatigue=='oui')||("sensation de malaise")||(gene=='oui')||(boire=='oui')||(fievre<=35.4))
+    {
+        return true;
+    }
+    else
+    {
+        return false;
+    }
+}
