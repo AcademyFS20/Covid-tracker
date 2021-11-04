@@ -582,10 +582,35 @@ form.addEventListener("change",function()
              const Reponse="R1";
              console.log(Reponse);
          }
-         if(scenario1()&&FPEQUAL0()&&((FGEQUAL0()&&age=='entre')||(FGEQUAL0()&&FGMINEQUAL1())))
+         else if(scenario1()&&FPEQUAL0()&&((FGEQUAL0()&&age=='entre')||(FGEQUAL0()&&FGMINEQUAL1())))
          {
              const Reponse="R2";
              console.log(Reponse);
+         }
+         else if(scenario1()&&FPSUP1()&&FGEQUAL0())
+         {
+            const Reponse="R3";
+            console.log(Reponse);
+         }
+         else if(scenario1()&&FPSUP1()&&FGMINEQUAL1())
+         {
+            const Reponse="R4";
+            console.log(Reponse);
+         }
+         else if(scenario1()&&FPSUP1()&&FGMINSUP2())
+         {
+            const Reponse="R5";
+            console.log(Reponse);
+         }
+         else if(scenario1()&&(FPEQUAL0()||FPSUP1())&&FGMAJSUP1())
+         {
+            const Reponse="R6";
+            console.log(Reponse);
+         }
+         else if((fievre=='oui'&&toux=='oui')&&FPEQUAL0()&&(FGEQUAL0||(FGMINSUP1&&FGMAJEQUAL0())))
+         {
+            const Reponse="R7";
+            console.log(Reponse);
          }
     }
     
