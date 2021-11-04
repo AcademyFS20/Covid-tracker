@@ -447,113 +447,258 @@ form.addEventListener("change",function()
     }
     if(i==23)
     {
-        const Reponse="";
-        console.log(Res);
-        const [empty,fievre,temp,toux,muscle,gorge,diahree,fatigue,repos,boire,gene,sent,symp,age,poids,hyper,diab,cancer,respir,dialys,foie,enceinte,defense,immun]=Res;
+        let Reponse="";
+        let [empty,fievre,temp,toux,muscle,gorge,diahree,fatigue,repos,boire,gene,sent,symp,age,poids,hyper,diab,cancer,respir,dialys,foie,enceinte,defense,immun]=Res;
+
+
+                    /**** Fonctions des conditions de l'algorithme***********/
+        function FPEQUAL0()
+        {
+            let [empty,fievre,temp,toux,muscle,gorge,diahree,fatigue,repos,boire,gene,sent,symp,age,poids,hyper,diab,cancer,respir,dialys,foie,enceinte,defense,immun]=Res;
+            if((age!='sup70')&&(hyper=='non')&&(diab=='non')&&(cancer=='non')&&(respir=='non')&&(dialys=='non')&&((enceinte=='non')||(enceinte=='non-applicable'))&&(defense=='non')&&(immun=='non'))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+        function FGEQUAL0()
+        {
+            let [empty,fievre,temp,toux,muscle,gorge,diahree,fatigue,repos,boire,gene,sent,symp,age,poids,hyper,diab,cancer,respir,dialys,foie,enceinte,defense,immun]=Res;
+            if((temp<39)&&(fatigue=='non')&&(!(sent=='mal'||sent=='tres mal'))&&(gene=='non')&&(boire=='non')&&(temp>35.4))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+        function FGMINSUP1()
+        {
+            let [empty,fievre,temp,toux,muscle,gorge,diahree,fatigue,repos,boire,gene,sent,symp,age,poids,hyper,diab,cancer,respir,dialys,foie,enceinte,defense,immun]=Res;
+            if((temp>=39)||(fatigue=='oui')||(sent=='mal'||sent=='tres mal'))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+        function FGMINEQUAL1()
+        {
+            let [empty,fievre,temp,toux,muscle,gorge,diahree,fatigue,repos,boire,gene,sent,symp,age,poids,hyper,diab,cancer,respir,dialys,foie,enceinte,defense,immun]=Res;
+            if(((temp>=39)&&(fatigue=='non')&&(!(sent=='mal'||sent=='tres mal')))||((temp<39)&&(fatigue=='oui')&&(!(sent=='mal'||sent=='tres mal')))||((temp<39)&&(fatigue=='non')&&((sent=='mal'||sent=='tres mal'))))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+        function FGMINSUP2()
+        {
+            let [empty,fievre,temp,toux,muscle,gorge,diahree,fatigue,repos,boire,gene,sent,symp,age,poids,hyper,diab,cancer,respir,dialys,foie,enceinte,defense,immun]=Res;
+            if(((temp>=39)&&(fatigue=='oui')&&(!(sent=='mal'||sent=='tres mal')))||((temp>=39)&&(fatigue=='non')&&((sent=='mal'||sent=='tres mal')))||((temp<39)&&(fatigue=='oui')&&((sent=='mal'||sent=='tres mal'))))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+        function FPSUP1()
+        {
+            let [empty,fievre,temp,toux,muscle,gorge,diahree,fatigue,repos,boire,gene,sent,symp,age,poids,hyper,diab,cancer,respir,dialys,foie,enceinte,defense,immun]=Res;
+            if((age=='sup70')||(hyper=='oui')||(diab=='oui')||(cancer=='oui')||(respir=='oui')||(dialys=='oui')||(enceinte=='oui')||(defense=='oui')||(immun=='oui'))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+        function FGMAJEQUAL0()
+        {
+            let [empty,fievre,temp,toux,muscle,gorge,diahree,fatigue,repos,boire,gene,sent,symp,age,poids,hyper,diab,cancer,respir,dialys,foie,enceinte,defense,immun]=Res;
+            if(gene=='non'&&boire=='non'&&temp>35.4)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+        function FGMAJSUP1()
+        {
+            let [empty,fievre,temp,toux,muscle,gorge,diahree,fatigue,repos,boire,gene,sent,symp,age,poids,hyper,diab,cancer,respir,dialys,foie,enceinte,defense,immun]=Res;
+            if(gene=='oui'||boire=='oui'||temp<=35.4)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+        function FGSUP1()
+        {
+            let [empty,fievre,temp,toux,muscle,gorge,diahree,fatigue,repos,boire,gene,sent,symp,age,poids,hyper,diab,cancer,respir,dialys,foie,enceinte,defense,immun]=Res;
+            if((temp>=39)||(fatigue=='oui')||((sent=='mal'||sent=='tres mal'))||(gene=='oui')||(boire=='oui')||(temp<=35.4))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+        function scenario1()
+        {
+            let [empty,fievre,temp,toux,muscle,gorge,diahree,fatigue,repos,boire,gene,sent,symp,age,poids,hyper,diab,cancer,respir,dialys,foie,enceinte,defense,immun]=Res;
+            if(fievre=='oui'||(toux=='oui'&&gorge=='oui')||(toux='oui'&&muscle=='oui')||(fievre=='oui'&&diahree=='oui'))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
         
+    
+
         /******** Code Algorithme */
-         
+         if(scenario1()&&FPEQUAL0()&&(FGEQUAL0()&&age=='moins50'))
+         {
+             const Reponse="R1";
+             console.log(Reponse);
+         }
+         if(scenario1()&&FPEQUAL0()&&((FGEQUAL0()&&age=='entre')||(FGEQUAL0()&&FGMINEQUAL1())))
+         {
+             const Reponse="R2";
+             console.log(Reponse);
+         }
     }
     
 })
 
 
-function FPEQUAL0()
-{
-    if((age!='sup70')&&(hyper=='non')&&(diab=='non')&&(cancer=='non')&&(respir=='non')&&(dialys=='non')&&((enceinte=='non')||(enceinte=='non-applicable'))&&(defense=='non')&&(immun=='non'))
-    {
-        return true;
-    }
-    else
-    {
-        return false;
-    }
-}
-function FGEQUAL0()
-{
-    if((fievre<39)&&(fatigue=='non')&&("!sensation de malaise")&&(gene=='non')&&(boire=='non')&&(fievre>35.4))
-    {
-        return true;
-    }
-    else
-    {
-        return false;
-    }
-}
-function FGMINSUP1()
-{
-    if((fievre>=39)||(fatigue=='oui')||("sensation de malaise"))
-    {
-        return true;
-    }
-    else
-    {
-        return false;
-    }
-}
-function FGMINEQUAL1()
-{
-    if(((fievre>=39)&&(fatigue=='non')&&("!sensation de malaise"))||((fievre<39)&&(fatigue=='oui')&&("!sensation de malaise"))||((fievre<39)&&(fatigue=='non')&&("sensation de malaise")))
-    {
-        return true;
-    }
-    else
-    {
-        return false;
-    }
-}
-function FGMINSUP2()
-{
-    if(((fievre>=39)&&(fatigue=='oui')&&("!sensation de malaise"))||((fievre>=39)&&(fatigue=='non')&&("sensation de malaise"))||((fievre<39)&&(fatigue=='oui')&&("sensation de malaise")))
-    {
-        return true;
-    }
-    else
-    {
-        return false;
-    }
-}
-function FPSUP1()
-{
-    if((age=='sup70')||(hyper=='oui')||(diab=='oui')||(cancer=='oui')||(respir=='oui')||(dialys=='oui')||(enceinte=='oui')||(defense=='oui')||(immun=='oui'))
-    {
-        return true;
-    }
-    else
-    {
-        return false;
-    }
-}
-function FGMAJEQUAL0()
-{
-    if(gene=='non'&&boire=='non'&&fievre>35.4)
-    {
-        return true;
-    }
-    else
-    {
-        return false;
-    }
-}
-function FGMAJSUP1()
-{
-    if(gene=='oui'||boire=='oui'||fievre<=35.4)
-    {
-        return true;
-    }
-    else
-    {
-        return false;
-    }
-}
-function FGSUP1()
-{
-    if((fievre>=39)||(fatigue=='oui')||("sensation de malaise")||(gene=='oui')||(boire=='oui')||(fievre<=35.4))
-    {
-        return true;
-    }
-    else
-    {
-        return false;
-    }
-}
+// function FPEQUAL0()
+// {
+//     if((age!='sup70')&&(hyper=='non')&&(diab=='non')&&(cancer=='non')&&(respir=='non')&&(dialys=='non')&&((enceinte=='non')||(enceinte=='non-applicable'))&&(defense=='non')&&(immun=='non'))
+//     {
+//         return true;
+//     }
+//     else
+//     {
+//         return false;
+//     }
+// }
+// function FGEQUAL0()
+// {
+//     if((temp<39)&&(fatigue=='non')&&(!(sent=='mal'||sent=='tres mal'))&&(gene=='non')&&(boire=='non')&&(temp>35.4))
+//     {
+//         return true;
+//     }
+//     else
+//     {
+//         return false;
+//     }
+// }
+// function FGMINSUP1()
+// {
+//     if((temp>=39)||(fatigue=='oui')||(sent=='mal'||sent=='tres mal'))
+//     {
+//         return true;
+//     }
+//     else
+//     {
+//         return false;
+//     }
+// }
+// function FGMINEQUAL1()
+// {
+//     if(((temp>=39)&&(fatigue=='non')&&(!(sent=='mal'||sent=='tres mal')))||((temp<39)&&(fatigue=='oui')&&(!(sent=='mal'||sent=='tres mal')))||((temp<39)&&(fatigue=='non')&&((sent=='mal'||sent=='tres mal'))))
+//     {
+//         return true;
+//     }
+//     else
+//     {
+//         return false;
+//     }
+// }
+// function FGMINSUP2()
+// {
+//     if(((temp>=39)&&(fatigue=='oui')&&(!(sent=='mal'||sent=='tres mal')))||((temp>=39)&&(fatigue=='non')&&((sent=='mal'||sent=='tres mal')))||((temp<39)&&(fatigue=='oui')&&((sent=='mal'||sent=='tres mal'))))
+//     {
+//         return true;
+//     }
+//     else
+//     {
+//         return false;
+//     }
+// }
+// function FPSUP1()
+// {
+//     if((age=='sup70')||(hyper=='oui')||(diab=='oui')||(cancer=='oui')||(respir=='oui')||(dialys=='oui')||(enceinte=='oui')||(defense=='oui')||(immun=='oui'))
+//     {
+//         return true;
+//     }
+//     else
+//     {
+//         return false;
+//     }
+// }
+// function FGMAJEQUAL0()
+// {
+//     if(gene=='non'&&boire=='non'&&temp>35.4)
+//     {
+//         return true;
+//     }
+//     else
+//     {
+//         return false;
+//     }
+// }
+// function FGMAJSUP1()
+// {
+//     if(gene=='oui'||boire=='oui'||temp<=35.4)
+//     {
+//         return true;
+//     }
+//     else
+//     {
+//         return false;
+//     }
+// }
+// function FGSUP1()
+// {
+//     if((temp>=39)||(fatigue=='oui')||((sent=='mal'||sent=='tres mal'))||(gene=='oui')||(boire=='oui')||(temp<=35.4))
+//     {
+//         return true;
+//     }
+//     else
+//     {
+//         return false;
+//     }
+// }
+// function scenario1()
+// {
+//     if(fievre=='oui'||(toux=='oui'&&gorge=='oui')||(toux='oui'&&muscle=='oui')||(fievre=='oui'&&diahree=='oui'))
+//     {
+//         return true;
+//     }
+//     else
+//     {
+//         return false;
+//     }
+// }
