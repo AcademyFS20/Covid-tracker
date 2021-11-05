@@ -674,19 +674,20 @@ form.addEventListener("change",function()
             precedent.style.display="none";
             // console.log(Reponses);
             const div=document.createElement("div");
+            div.style.height='200px';
             div.innerHTML=`<div class="containerSteper"><div class="containerSteper__preambule">
             <h1 class="containerSteper__titrePreambule"> Résultats:</h1>
             <p class="containerSteper__preambule--p"> ${Reponses}
             </p>
         </div>`;
         document.querySelector(".main").appendChild(div);
-        headmain.innerHTML=`<div class="headmain">
-        <div class="headmain__pointblue"></div>
-        <div class="headmain__pointblue"></div>
-        <div class="headmain__pointprin">
-            <div class="headmain__pointprin--pointsecond"></div>
+        headmain.innerHTML=`
+        <div class="headmain__resultatblue1"></div>
+        <div class="headmain__resultatblue2"></div>
+        <div class="headmain__principblue">
+            <div class="headmain__principblue--secondblue"></div>
         </div>
-        <div>`;
+        `;
          })
         }})
         
