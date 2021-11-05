@@ -8,34 +8,42 @@
     <title>Quiz</title>
 </head>
 <body>
-    <header>
-        <div class="header">
-
-            <div class="header__logo">
-                <img src="Images/logo__sante-50.svg" class="header__logo--image" alt="Images">
-            </div> 
-
-            <div class="header__nav">
-
-                <div class="conseil">
-                    <a href="" class="header__nav--conseil"> Conseil</a>
-                </div>
-
-                <div class="acceuil">
-                    <a href="" class="header__nav--acceuil">Acceuil</a>
-                </div>
-
-                <div class="langue">
-                    <button type="button" class="languebutton">
-                        <span class="languebutton__texte"> Langue</span>
-                        <span class="languebutton__image">
-                            <img src="images/brit.png" alt="brit" class="languebutton__image--brit">
+    <header class="header">
+        <nav class="navbar">
+            <a href="#" class="nav-logo"><img src="images/logo__sante-50.svg" alt=""></a>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="#" class="nav-link">Conseil</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">Acceuil</a>
+                </li>
+                <li class="nav-item nav-langue">
+                    <a href="#" class="nav-link langue">
+                        <span class="langue__texte"> Langue</span>
+                        <span class="langue__image">
+                            <img src="images/brit.png" alt="brit" class="langue__image--brit">
                         </span>
-                    </button>
-                </div>
-            </div>      
-        </div>
-    </header>
+                    </a>
+                </li>
+                
+            </ul>
+           
+        </nav>
+    
+    <!---------------------- main info ----------------------->
+    
+        <div class="info">
+    
+            <div class="info__titre">
+                <h3>La dernière info Médicale</h3>
+            </div>
+    
+            <div class="info__texte">
+                <p>La prise d'anit-inflammatoires(ibuprofène, cortisone...) pourrait être un facteur d'aggravation de l'infection. En cas de fièvre, prenez du paracétamol.</p>
+                <p>N'arrêtez pas votre traitement! Consultez votre médecin ou votre pharmacien</p>
+            </div>
+        </header> 
     <main class="main" style="position:relative;">
         <div class="headmain">
             <div class="headmain__pointblue"></div>
