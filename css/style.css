@@ -361,4 +361,5 @@ i {
   .covidtracker__casmaroc, .covidtracker__casmonde1, .covidtracker__casmonde2 {
     border: 0.2rem solid #2684b5;
     box-shadow: 0.5rem 0.5rem #2684b5;
-    padding: 0 10%; }
+    padding: 0 10%;
+    text-align: center; }

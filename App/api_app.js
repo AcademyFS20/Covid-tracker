@@ -18,7 +18,9 @@ getData()
     let caseNumbers = reponse.map(({Cases})=>Cases);
     let dates= res.map(({Date})=>Date);
     let today= caseNumbers.slice(-1);
-  
+
+    
+
     totalConfirmedCases.innerHTML=today[0];
     showCases(dates,caseNumbers)
 })
@@ -65,7 +67,8 @@ async function getWolrdData(){
 /********************Moroccan cases chart function*******************/
 function showCases(dates,caseNumbers){
      
-     const labels = dates;
+     const labels = dates; 
+     console.log(labels);
  
      const data = {
        labels: labels,
