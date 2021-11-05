@@ -612,6 +612,53 @@ form.addEventListener("change",function()
             const Reponse="R7";
             console.log(Reponse);
          }
+         else if((fievre=='oui'&&toux=='oui')&&FPSUP1()&&FGEQUAL0())
+         {
+            const Reponse="R8";
+            console.log(Reponse);
+         }
+         else if((fievre=='oui'&&toux=='oui')&&FPSUP1()&&FGMINEQUAL1())
+         {
+            const Reponse="R9";
+            console.log(Reponse);
+         }
+         else if((fievre=='oui'&&toux=='oui')&&FPSUP1()&&FGMINSUP2())
+         {
+            const Reponse="R10";
+            console.log(Reponse);
+         }
+         else if((fievre=='oui'&&toux=='oui')&&(FPSUP1()||FPEQUAL0())&&FGSUP1())
+         {
+            const Reponse="R11";
+            console.log(Reponse);
+         }
+         else if((fievre=='oui'||toux=='oui'||gorge=='oui'||muscle=='oui'||diahree=='oui')&&FGEQUAL0)
+         {
+            const Reponse="R12";
+            console.log(Reponse);
+         }
+         else if((fievre=='oui'||toux=='oui'||gorge=='oui'||muscle=='oui'||diahree=='oui')&&(FGSUP1()||FPSUP1()))
+         {
+            const Reponse="R13";
+            console.log(Reponse);
+         }
+         else if(fievre=='non'&&toux=='non'&&gorge=='non'&&muscle=='non'&&diahree=='non'&&fatigue=='non'&&repos=='non'&&boire=='non'&&gene=='non'&&hyper=='non'&&diab=='non'&&cancer=='non'&&dialys=='non'&&respir=='non'&&foie=='non'&&(enceinte=='non'||enceinte=='non-applicable')&&defense=='non'&&immun=='non')
+         {
+            const Reponse="R14";
+            console.log(Reponse);
+         }
+         else if(fievre=='oui'&&toux=='oui'&&gorge=='oui'&&muscle=='oui'&&diahree=='oui'&&fatigue=='oui'&&repos=='oui'&&boire=='oui'&&gene=='oui'&&hyper=='oui'&&diab=='oui'&&cancer=='oui'&&dialys=='oui'&&respir=='oui'&&foie=='oui'&&enceinte=='oui'&&defense=='oui'&&immun=='oui')
+         {
+            const Reponse="R15";
+            console.log(Reponse);
+         }
+         else if(age=='inf15')
+         {
+            const Reponse="R16";
+            console.log(Reponse);
+         }
+        //  scenario1()&&(FPEQUAL0()||FPSUP1())&&FGMAJSUP1()
+        //  fievre=='oui'&&toux=='oui'&&gorge=='oui'&&muscle=='oui'&&diahree=='oui'&&fatigue=='oui'&&repos=='oui'&&boire=='oui'&&gene=='oui'&&hyper=='oui'&&diab=='oui'&&cancer=='oui'&&dialys=='oui'&&respir=='oui'&&foie=='oui'&&enceinte=='oui'&&defense=='oui'&&immun=='oui'
     }
     
 })
