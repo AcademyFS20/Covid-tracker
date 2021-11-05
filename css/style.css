@@ -10,6 +10,67 @@
 html {
   font-size: 62.5%; }
 
+  .header {
+    background-color: #bfdbea; }
+  
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 10%; }
+  
+  .hamburger {
+    display: none; }
+  
+  .bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    background-color: #101010; }
+  
+  .nav-menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center; }
+  
+  .nav-menu a {
+    color: #2684b5; }
+  
+  .nav-item {
+    margin-left: 5rem; }
+  
+  .nav-link {
+    font-size: 2rem;
+    font-weight: 400;
+    color: #475569; }
+  
+  .nav-link:hover {
+    color: #26519e; }
+  
+  .langue {
+    text-align: center;
+    align-items: center;
+    display: inline-flex;
+    font-size: 2.4rem;
+    cursor: pointer;
+    /*  background-color: #86c6e9; */ }
+  
+  .nav-langue {
+    border: 0.1rem solid black;
+    border-radius: 0.5rem;
+    overflow: hidden; }
+  
+  .langue__image {
+    padding: 0 1rem; }
+  
+  .langue__image--brit {
+    width: 3.4rem; }
+  
+  @media screen and (max-width: 600px) {
+
 .section1 {
   background-color: #1078ad;
   padding-bottom: 20px;
