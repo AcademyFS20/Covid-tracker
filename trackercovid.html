@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <title>Document</title>
+</head>
+<body>
+  <header class="header">
+    <nav class="navbar">
+        <a href="#" class="nav-logo"><img src="images/logo__sante-50.svg" alt=""></a>
+        <ul class="nav-menu">
+            <li class="nav-item">
+                <a href="#" class="nav-link">Conseil</a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link">Acceuil</a>
+            </li>
+            <li class="nav-item nav-langue">
+                <a href="#" class="nav-link langue">
+                    <span class="langue__texte"> Langue</span>
+                    <span class="langue__image">
+                        <img src="images/brit.png" alt="brit" class="langue__image--brit">
+                    </span>
+                </a>
+            </li>
+            
+        </ul>
+        <div class="hamburger">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+    </nav>
+</header>
+
+
+<main class="tracker">
+  <div class="covidtracker">
+    <div class="covidtracker__container">
+      <h2> STATISTIQUE ET VISUALISATION DE DONNEES COVID 19</h2>
+      <p>CovidTracker est un outil permettant de suivre l'évolution de l'épidémie à Coronavirus au monde entier</p>
+      <h2>EN UN COUP D'OEIL</h2>
+      <p id="datejour"> </p>
+    </div>
+    
+    <div class="covidtracker__casmaroc">
+      <form >
+        <label for="fname">Nouveaux cas confirmés aujourd'hui:</label>
+        <p id="confirmedCasesToday"></p>
+        <!-- <input type="text" id="confirmedCasesToday"  name="fname"> --><br><br>
+        <label for="lname">Total des cas confirmés:</label>
+        <p id="totalConfirmedCases"></p>
+        <!-- <input type="text" id="totalConfirmedCases" name="lname"> --><br><br>
+        <label for="lname">Total des decés:</label>
+        <p id="totalDeaths"></p>
+        <!-- <input type="text" id="totalDeaths" name="lname"> --><br><br>
+      </form>
+        <canvas id="myChart"></canvas>
+    </div>
+  
+    <div class="covidtracker__casmonde1">
+      <h1>WORLD SUMMARY</h1>
+      <p id="datejour"></p>
+      <canvas id="Chart"></canvas>
+    </div>
+      
+    <div class="covidtracker__casmonde2">
+      <canvas id="worldChart"></canvas>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <section class="section1">
+      <h2 class="section1__title">Recommandations officielles</h2>
+      <div class="div1">
+          <div class="div1__div">
+              <p class="div1__div--p">Si vous pensez etre malade</p>
+              <p class="div1__div--p">Evitez les endroits publics</p>
+              <p class="div1__div--p">Ne rendez pas visite aux personnes fragiles</p>
+              <p class="div1__div--p">Evitez de sortir de chez vous</p>
+              <p class="div1__div--p">Respectez les meures barriere</p>
+              <p class="div1__div--p">Surveillez vos symptomes, l'évolution de votre température et recherchez un avis medical</p>
+          </div>
+          <div class="div1__div">
+              <h3 class="div1__div--title">Apple gratuit</h3>
+              <a class="div1__div--a" id="lien1">080 100 47 47</a>
+              <a class="div1__div--a" id="lien2">www.sante.gov.ma</a>
+          </div>
+      </div>
+  </section>
+  <section class="section2">
+      <h2 class="section2__title">Vous pensez avoir été exposé au Coronavirus COVID-19 et avez des symptomes?</h2>
+      <img class="section2__image" src="Images/1f637.svg">
+      <a href="#" class="section2__a">Demarrer le test</a>
+  </section>
+  <section class="section3">
+      <img class="section3__image" src="Images/logo__sante-1.svg">
+      <div class="section3__div">
+          <div class="dive">
+              <ul class="dive__list">
+                  <li class="dive__list--elm" id="elm1"><a class="dive__list--a" href="#">FRAN  <i class="fas fa-globe"></i></a></li>
+                  <li class="dive__list--elm"><a class="dive__list--a elm2" href="#">Accueil</a></li>
+                  <li class="dive__list--elm"><a class="dive__list--a" href="#">Conseil</a></li>
+              </ul>
+          </div>
+          <div class="dive dive2">
+              <h3 class="dive__title1">Contacts utiles</h3>
+              <h4 class="dive__title2">Chiffre économique "Alo epidémie vigilance"</h4>
+              <h3 class="dive__title3">080 100 47 47</h3>
+              <h4 class="dive__title2">Aide médical urgente</h4>
+              <h3 class="dive__title3">114</h3>
+          </div>
+          <div class="dive dive3">
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus consequat dignissim efficitur. Pellentesque sit amet sapien ut felis placerat luctus non a nulla. Aenean vulputate, tortor et sodales porttitor, augue metus scelerisque nisl, eget dapibus sapien urna eu turpis. Sed condimentum lobortis purus, et fringilla leo gravida ut.</p>
+          </div>
+      </div>
+  </section>
+  <section class="section4"></section>
+</footer>
+
+  
+
+    <script src="App/api_app.js"></script>
+</body>
+</html>
