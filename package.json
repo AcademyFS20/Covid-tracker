@@ -1,19 +1,5 @@
 {
-<<<<<<< HEAD
-
    "type": "module",
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-  "name": "noteapp",
-=======
-  "type": "module",
-  "name": "movie-app",
->>>>>>> branche_hamza
-=======
-  "name": "noteapp",
->>>>>>> branche_oussama
->>>>>>> a80db3e96ca47cf91257e231edf19b660a346930
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -34,16 +20,7 @@
     "live-server": "^1.2.1",
     "node-sass": "^6.0.1",
     "postcss": "^8.3.9",
-    "sass": "^1.42.1",
-<<<<<<< HEAD
-    "uglify-js": "^3.14.2"
-=======
-<<<<<<< HEAD
-    "sweetalert2": "^11.1.9"
-=======
-    "uglify-js": "^3.14.2"
->>>>>>> branche_hamza
->>>>>>> a80db3e96ca47cf91257e231edf19b660a346930
+    "sass": "^1.42.1"
   },
   "devDependencies": {
     "concat": "^1.0.3",

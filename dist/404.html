@@ -5,20 +5,23 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
-    <title>Covid tracker</title>
+    <title>Document</title>
 </head>
-
 <body>
-    
+
+    <!-- header -->
     <header class="header">
         <nav class="navbar">
             <a href="#" class="nav-logo"><img src="images/logo__sante-50.svg" alt=""></a>
             <ul class="nav-menu">
                 <li class="nav-item">
-                    <a href="#" class="nav-link">Conseil</a>
+                    <a href="conseil.html" class="nav-link">Conseil</a>
                 </li>
                 <li class="nav-item">
-                    <a href="#" class="nav-link">Acceuil</a>
+                    <a href="index.html" class="nav-link">Acceuil</a>
+                </li>
+                <li class="nav-item">
+                    <a href="track.html" class="nav-link">Informations Covid 19</a>
                 </li>
                 <li class="nav-item nav-langue">
                     <a href="#" class="nav-link langue">
@@ -30,11 +33,14 @@
                 </li>
                 
             </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
             
         </nav>
-    
-    <!---------------------- main info ----------------------->
-    
+
         <div class="info">
     
             <div class="info__titre">
@@ -45,56 +51,32 @@
                 <p>La prise d'anit-inflammatoires(ibuprofène, cortisone...) pourrait être un facteur d'aggravation de l'infection. En cas de fièvre, prenez du paracétamol.</p>
                 <p>N'arrêtez pas votre traitement! Consultez votre médecin ou votre pharmacien</p>
             </div>
-        </header> 
+      </header>
 
-    
+    <!-- main -->
 
     <main>
-        <div class="container">
-            <div class="container__image">
-                <img class="container__image--img" src="Images/doc.png" > 
-            </div>
-            <div class="container__txt">
-                <h1 class="container__titre"> Vous pensez avoir été exoposé au Cornavirus COVID-19 et avez des symptômes ? </h1>
-                <img class="container_image--img " src="Images/1f637.svg">
-                <div class="container__paragraph"> 
-                    <p> Je reste vigilant ? </p>
-                    <p> Je programme une téléconsultation ?</p>
-                    <p>J'appelle le 15 ?</p>
-                    <p>Faites le test pour répondre en citoyen</p>
-                    <p>éclairé selon vos symptômes.</p>
+        <section class="section404">
+            <div class="section404__container">
+                <div class="image404">
+                    <img src="images/Capture.PNG" id="image404" alt="Capture">
                 </div>
-                <button type="button" class="container--btn"><a style="text-decoration:none;" href="quiz2.html">Démarrer le test</a> </button>
+    
+                <div class="section404__introuvable">
+                    <h1>Page introuvable</h1>
+                </div>
+    
+                <div class="section404__boutonprincipal">
+                    <button class="section404__boutonprincipal--bouton"> PAGE PRINCIPALE </button>
+                </div>
+
             </div>
             
-        </div>
-        <div class="symptomes">
-            <h1 class="symptomes__title"> Quels sont les symptômes à surveiller ? </h1>
-            <div class="symptomes__grid">
-                <div class="symptomes__fievre">
-                    <img src="images/fievre.png">
-                    <h2> Fièvre</h2>
-                </div>
-                <div class="symptomes__vomissements">
-                    <img class="vomissements__image--img" src="images/Calque 2.svg">
-                    <h2> Nausées et vomissements</h2>
-                </div>
-                <div class="symptomes__respiratoire">
-                    <img src="images/Calque -2.svg">
-                    <h2> Gêne respiratoire</h2>
-                </div>
-                <div class="symptomes__toux">
-                    <img src="images/Calque -1.svg">
-                    <h2> Toux et maux de gorge</h2>
-                </div>
+        </section>
 
-                
-            </div>
+    </main>
 
-        </div>
-        
-        
-
+    <!-- footer -->
     <footer>
         <section class="section1">
             <h2 class="section1__title">Recommandations officielles</h2>
@@ -143,8 +125,8 @@
         </section>
         <section class="section4"></section>
     </footer>
-
     <script src="https://kit.fontawesome.com/43565e0527.js" crossorigin="anonymous"></script>
     <script src="App/App.js"></script>
-</main>
+    
+</body>
 </html>

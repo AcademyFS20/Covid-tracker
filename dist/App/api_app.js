@@ -2,22 +2,49 @@
 let api_url_Morocco ='https://api.covid19api.com/dayone/country/morocco/status/confirmed';
 let api_url_world='https://api.covid19api.com/summary';
 
-const d = new Date();
-let text = d.toLocaleString("en-US");
-document.getElementById("datejour").innerHTML = text;
+const todayDate = new Date();
+const dated = todayDate.getFullYear()+'-'+(todayDate.getMonth()+1)+'-'+todayDate.getDate();
+const time = todayDate.getHours() + ":" + todayDate.getMinutes() + ":" + todayDate.getSeconds();
+const dateTime = dated+' '+time;
+document.getElementById("datejour").innerHTML = dateTime;
 
 let confirmedCasesToday = document.getElementById("confirmedCasesToday");
 let totalConfirmedCases = document.getElementById("totalConfirmedCases");
 let totalDeaths = document.getElementById("totalDeaths");
 
+/** 
+ * @tijani 
+ * @return Date String
+ * Making a function which will create a date from the data
+ * 
+ *  */
+function FormatDate(date){
+const options = { timeZone: 'UTC', timeZoneName: 'short',hour: '2-digit', minute: '2-digit' }
+      let newDate = Date.parse(date);
+      const theDate = new Date(newDate);
+      const time = theDate.toLocaleTimeString('fr-FR',options);
+      const day = theDate.toLocaleDateString('fr-Fr',{day: 'numeric'});
+      const month = theDate.toLocaleDateString('fr-Fr',{ month: 'long'});
+      const year = theDate.toLocaleDateString('fr-Fr',{ year: 'numeric'});
+      return {
 
+          heure:time,
+          jour:day,
+          mois:month,
+          annee:year
+      };
+}
+
+window.addEventListener('DOMContentLoaded',async ()=>{
 
 /*****GET DATA FROM MOROCCO *********/
 getData()
 .then(reponse=>{
     let caseNumbers = reponse.map(({Cases})=>Cases);
+    console.log(caseNumbers);
     let dates= res.map(({Date})=>Date);
     let today= caseNumbers.slice(-1);
+    console.log(today);
 
     
 
@@ -48,6 +75,10 @@ getWolrdData()
     ShowCountriesData(pays,casConfirm,casDeces)
 })
 .catch(error=>console.log("erreur"));
+})
+
+
+
 
     
 async function getData(){
@@ -68,10 +99,25 @@ async function getWolrdData(){
 function showCases(dates,caseNumbers){
      
      const labels = dates; 
+
      console.log(labels);
+
+     let newLabels = labels.map((item) => {
+
+      return FormatDate(item);
+     })
+
+     
+     const Months = newLabels.map((item) => {
+
+     return item.mois;
+     })
+
+     console.log(Months)
+    
  
      const data = {
-       labels: labels,
+       labels: Months,
        datasets: [{
          label: 'Evolution des cas au Maroc',
          backgroundColor: 'rgb(255, 99, 132)',
