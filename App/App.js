@@ -1,10 +1,6 @@
 
 const endpointWorld = 'https://api.covid19api.com/summary';
 const endpointMorocco = 'https://api.covid19api.com/dayone/country/morocco/status/confirmed'
-
-
-
-
 const ctx = document.getElementById('myChart').getContext('2d')
 const ctxBar = document.getElementById('myBarChart').getContext('2d')
 
