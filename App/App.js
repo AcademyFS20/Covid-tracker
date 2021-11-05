@@ -16,6 +16,10 @@ suivant.addEventListener('click',function(e){
     {
         i=Tab.length-1;
     }
+    if(i==Tab.length-1)
+    {
+        this.innerText="Voir Résultats";
+    }
     title.innerText=Tab[i];
     progress.style.width=`${(100/(Tab.length-1))*i}%`;
     form.classList.add(`.main__form${i}`)
@@ -181,6 +185,10 @@ precedent.addEventListener('click',function(e){
     if(i<1)
     {
         i=1;
+    }
+    if(i<Tab.length-1)
+    {
+        suivant.innerText="Question suivante";
     }
     title.innerText=Tab[i];
     progress.style.width=`${(100/(Tab.length-1))*i}%`;
@@ -577,200 +585,110 @@ form.addEventListener("change",function()
     
 
         /******** Code Algorithme */
+        let Reponses="";
          if(scenario1()&&FPEQUAL0()&&(FGEQUAL0()&&age=='moins50'))
          {
-             const Reponse="R1";
-             console.log(Reponse);
+             Reponses="nous vous conseillons de rester à votre domicile et de contacter votre médecin en cas d’apparition de nouveaux symptômes. Vous pourrez aussi utiliser à nouveau l’application pour réévaluer vos symptômes.";
+            //  console.log(Reponse);
          }
          else if(scenario1()&&FPEQUAL0()&&((FGEQUAL0()&&age=='entre')||(FGEQUAL0()&&FGMINEQUAL1())))
          {
-             const Reponse="R2";
-             console.log(Reponse);
+             Reponses="téléconsultation ou médecin généraliste ou visite à domicile";
+            //  console.log(Reponse);
          }
          else if(scenario1()&&FPSUP1()&&FGEQUAL0())
          {
-            const Reponse="R3";
-            console.log(Reponse);
+            Reponses="téléconsultation ou médecin généraliste ou visite à domicile";
+            // console.log(Reponse);
          }
          else if(scenario1()&&FPSUP1()&&FGMINEQUAL1())
          {
-            const Reponse="R4";
-            console.log(Reponse);
+            Reponses="Un seul facteur de gravité mineur : téléconsultation ou médecin généraliste ou visite à domicile";
+            // console.log(Reponse);
          }
          else if(scenario1()&&FPSUP1()&&FGMINSUP2())
          {
-            const Reponse="R5";
-            console.log(Reponse);
+            Reponses="appel 141";
+            // console.log(Reponse);
          }
          else if(scenario1()&&(FPEQUAL0()||FPSUP1())&&FGMAJSUP1())
          {
-            const Reponse="R6";
-            console.log(Reponse);
+            Reponses="appelez le 141 si une gêne respiratoire ou des difficultés importantes pour s’alimenter ou boire pendant plus de 24h apparaissent.";
+            // console.log(Reponse);
          }
          else if((fievre=='oui'&&toux=='oui')&&FPEQUAL0()&&(FGEQUAL0||(FGMINSUP1&&FGMAJEQUAL0())))
          {
-            const Reponse="R7";
-            console.log(Reponse);
+            Reponses="Sans facteur de gravité ou au moins 1 facteur de gravité mineur sans facteur de gravité majeur : téléconsultation ou médecin généraliste ou visite à domicile";
+            // console.log(Reponse);
          }
          else if((fievre=='oui'&&toux=='oui')&&FPSUP1()&&FGEQUAL0())
          {
-            const Reponse="R8";
-            console.log(Reponse);
+            Reponses="téléconsultation ou médecin généraliste ou visite à domicile";
+            // console.log(Reponse);
          }
          else if((fievre=='oui'&&toux=='oui')&&FPSUP1()&&FGMINEQUAL1())
          {
-            const Reponse="R9";
-            console.log(Reponse);
+            Reponses="téléconsultation ou médecin généraliste ou visite à domicile";
+            // console.log(Reponse);
          }
          else if((fievre=='oui'&&toux=='oui')&&FPSUP1()&&FGMINSUP2())
          {
-            const Reponse="R10";
-            console.log(Reponse);
+            Reponses="appel 141";
+            // console.log(Reponse);
          }
          else if((fievre=='oui'&&toux=='oui')&&(FPSUP1()||FPEQUAL0())&&FGSUP1())
          {
-            const Reponse="R11";
-            console.log(Reponse);
+            Reponses="Appel 141";
+            // console.log(Reponse);
          }
          else if((fievre=='oui'||toux=='oui'||gorge=='oui'||muscle=='oui'||diahree=='oui')&&FGEQUAL0)
          {
-            const Reponse="R12";
-            console.log(Reponse);
+            Reponses="Votre situation ne relève probablement pas du Covid-19. Consultez votre médecin au moindre doute.";
+            // console.log(Reponse);
          }
          else if((fievre=='oui'||toux=='oui'||gorge=='oui'||muscle=='oui'||diahree=='oui')&&(FGSUP1()||FPSUP1()))
          {
-            const Reponse="R13";
-            console.log(Reponse);
+            Reponses="Votre situation ne relève probablement pas du Covid-19. Un avis médical est recommandé. Au moindre doute, appelez le 141. ";
+            // console.log(Reponse);
          }
          else if(fievre=='non'&&toux=='non'&&gorge=='non'&&muscle=='non'&&diahree=='non'&&fatigue=='non'&&repos=='non'&&boire=='non'&&gene=='non'&&hyper=='non'&&diab=='non'&&cancer=='non'&&dialys=='non'&&respir=='non'&&foie=='non'&&(enceinte=='non'||enceinte=='non-applicable')&&defense=='non'&&immun=='non')
          {
-            const Reponse="R14";
-            console.log(Reponse);
+            Reponses="Votre situation ne relève probablement pas du Covid-19. N’hésitez pas à contacter votre médecin en cas de doute. Vous pouvez refaire le test en cas de nouveau symptôme pour réévaluer la situation. Pour toute information concernant le Covid-19 allez vers la page d’accueil. ";
+            // console.log(Reponse);
          }
          else if(fievre=='oui'&&toux=='oui'&&gorge=='oui'&&muscle=='oui'&&diahree=='oui'&&fatigue=='oui'&&repos=='oui'&&boire=='oui'&&gene=='oui'&&hyper=='oui'&&diab=='oui'&&cancer=='oui'&&dialys=='oui'&&respir=='oui'&&foie=='oui'&&enceinte=='oui'&&defense=='oui'&&immun=='oui')
          {
-            const Reponse="R15";
-            console.log(Reponse);
+            Reponses="Restez chez vous au maximum en attendant que les symptômes disparaissent. Prenez votre température deux fois par jour. Rappel des mesures d’hygiène. ";
+            // console.log(Reponse);
          }
          else if(age=='inf15')
          {
-            const Reponse="R16";
-            console.log(Reponse);
+            Reponses="Cette application n'est pas adapté aux personnes moins agées";
+            // console.log(Reponse);
          }
-        //  scenario1()&&(FPEQUAL0()||FPSUP1())&&FGMAJSUP1()
-        //  fievre=='oui'&&toux=='oui'&&gorge=='oui'&&muscle=='oui'&&diahree=='oui'&&fatigue=='oui'&&repos=='oui'&&boire=='oui'&&gene=='oui'&&hyper=='oui'&&diab=='oui'&&cancer=='oui'&&dialys=='oui'&&respir=='oui'&&foie=='oui'&&enceinte=='oui'&&defense=='oui'&&immun=='oui'
-    }
-    
-})
+        //  console.log(Reponses);
+         suivant.addEventListener('click',function(){
+            title.style.display="none";
+            form.style.display="none";
+            suivant.style.display="none";
+            precedent.style.display="none";
+            // console.log(Reponses);
+            const div=document.createElement("div");
+            div.innerHTML=`<div class="containerSteper"><div class="containerSteper__preambule">
+            <h1 class="containerSteper__titrePreambule"> Résultats:</h1>
+            <p class="containerSteper__preambule--p"> ${Reponses}
+            </p>
+        </div>`;
+        document.querySelector(".main").appendChild(div);
+        headmain.innerHTML=`<div class="headmain">
+        <div class="headmain__pointblue"></div>
+        <div class="headmain__pointblue"></div>
+        <div class="headmain__pointprin">
+            <div class="headmain__pointprin--pointsecond"></div>
+        </div>
+        <div>`;
+         })
+        }})
+        
 
 
-// function FPEQUAL0()
-// {
-//     if((age!='sup70')&&(hyper=='non')&&(diab=='non')&&(cancer=='non')&&(respir=='non')&&(dialys=='non')&&((enceinte=='non')||(enceinte=='non-applicable'))&&(defense=='non')&&(immun=='non'))
-//     {
-//         return true;
-//     }
-//     else
-//     {
-//         return false;
-//     }
-// }
-// function FGEQUAL0()
-// {
-//     if((temp<39)&&(fatigue=='non')&&(!(sent=='mal'||sent=='tres mal'))&&(gene=='non')&&(boire=='non')&&(temp>35.4))
-//     {
-//         return true;
-//     }
-//     else
-//     {
-//         return false;
-//     }
-// }
-// function FGMINSUP1()
-// {
-//     if((temp>=39)||(fatigue=='oui')||(sent=='mal'||sent=='tres mal'))
-//     {
-//         return true;
-//     }
-//     else
-//     {
-//         return false;
-//     }
-// }
-// function FGMINEQUAL1()
-// {
-//     if(((temp>=39)&&(fatigue=='non')&&(!(sent=='mal'||sent=='tres mal')))||((temp<39)&&(fatigue=='oui')&&(!(sent=='mal'||sent=='tres mal')))||((temp<39)&&(fatigue=='non')&&((sent=='mal'||sent=='tres mal'))))
-//     {
-//         return true;
-//     }
-//     else
-//     {
-//         return false;
-//     }
-// }
-// function FGMINSUP2()
-// {
-//     if(((temp>=39)&&(fatigue=='oui')&&(!(sent=='mal'||sent=='tres mal')))||((temp>=39)&&(fatigue=='non')&&((sent=='mal'||sent=='tres mal')))||((temp<39)&&(fatigue=='oui')&&((sent=='mal'||sent=='tres mal'))))
-//     {
-//         return true;
-//     }
-//     else
-//     {
-//         return false;
-//     }
-// }
-// function FPSUP1()
-// {
-//     if((age=='sup70')||(hyper=='oui')||(diab=='oui')||(cancer=='oui')||(respir=='oui')||(dialys=='oui')||(enceinte=='oui')||(defense=='oui')||(immun=='oui'))
-//     {
-//         return true;
-//     }
-//     else
-//     {
-//         return false;
-//     }
-// }
-// function FGMAJEQUAL0()
-// {
-//     if(gene=='non'&&boire=='non'&&temp>35.4)
-//     {
-//         return true;
-//     }
-//     else
-//     {
-//         return false;
-//     }
-// }
-// function FGMAJSUP1()
-// {
-//     if(gene=='oui'||boire=='oui'||temp<=35.4)
-//     {
-//         return true;
-//     }
-//     else
-//     {
-//         return false;
-//     }
-// }
-// function FGSUP1()
-// {
-//     if((temp>=39)||(fatigue=='oui')||((sent=='mal'||sent=='tres mal'))||(gene=='oui')||(boire=='oui')||(temp<=35.4))
-//     {
-//         return true;
-//     }
-//     else
-//     {
-//         return false;
-//     }
-// }
-// function scenario1()
-// {
-//     if(fievre=='oui'||(toux=='oui'&&gorge=='oui')||(toux='oui'&&muscle=='oui')||(fievre=='oui'&&diahree=='oui'))
-//     {
-//         return true;
-//     }
-//     else
-//     {
-//         return false;
-//     }
-// }
