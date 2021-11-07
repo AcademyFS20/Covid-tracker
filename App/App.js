@@ -13,15 +13,18 @@ window.addEventListener('DOMContentLoaded',async() => {
     const dataWord = await getData(endpointWorld);
     
     const dateOfDay =  dataWord.Global.Date.substring(0,10)
-    console.log(dateOfDay)
+    //console.log(dateOfDay)
+    const date = new Date(dateOfDay)
+    //console.log(date.toLocaleString("en-US",{weekday: "short", month: "short",day: "numeric", year: "numeric"}))
     const dt = document.getElementById('date')
-    dt.textContent = dateOfDay
+    dt.textContent =  ((date.toLocaleString("en-US",{weekday: "short", month: "short",day: "numeric", year: "numeric"})).replace(',','')).replace(',','')
     
     drawPieChart(endpointWorld);
     drawBarChart(endpointMorocco);
     drawLineChart(endpointWorld);
-  
-    
+
+    createListCountries(endpointWorld);
+
 })
 
 async function getData(url){
@@ -103,7 +106,7 @@ function datesCases(data){
     //console.log(datesCases(dataMoroccoLast15Days));
 
 const config = {
-        type: 'bar',
+        type: 'line',
         data: {
                 labels: datesCases(dataMoroccoLast15Days),
                 datasets: [
@@ -149,14 +152,14 @@ const config = {
 }
 
 
-function getCountires(data){
+function getCountries(data){
   
     let countries = [];
     data.Countries.forEach(element=>{
         countries.push(element.Country);
         
     })
-   console.log(countries)
+   //console.log(countries)
     return countries;
 }
 
@@ -167,7 +170,7 @@ function getTotalConfirmed(data){
         totalConf.push(element.TotalConfirmed);
         
     })
-    console.log(totalConf);
+    //console.log(totalConf);
     return totalConf;
 }
 
@@ -177,13 +180,13 @@ function getTotaldeaths(data){
         totalDeaths.push(element.TotalDeaths);
         
     })
-    console.log(totalDeaths);
+    //console.log(totalDeaths);
     return totalDeaths;
 }
 
 async function drawLineChart(url){
     const data = await getData(url)
-    const countries = getCountires(data)
+    const countries = getCountries(data)
     const totalConfirmed = getTotalConfirmed(data)
     const totalDeaths = getTotaldeaths(data)
     let deaths = totalDeaths.map(item=> item*1000)
@@ -193,13 +196,17 @@ async function drawLineChart(url){
         datasets: [{
             label: 'les cas confirmés',
             data: totalConfirmed,
+            borderColor:'rgb(255, 99, 132)',
             backgroundColor: 'rgb(255, 99, 132)',
+            yAxisID: 'y',
             hoverOffset: 4
           },
           {
             label: 'les décès',
             data: deaths,
-            backgroundColor: 'rgb(255, 255, 132)',
+            borderColor:'rgb(100, 0, 255)',
+            backgroundColor: 'rgb(100, 0, 255)',
+            yAxisID: 'y1',
             hoverOffset: 4
           },
             ]
@@ -219,23 +226,40 @@ async function drawLineChart(url){
                 title: {
                   display: true,
                   text: 'informations sur les cas Covid 19'
-                }
+                },
+                legend: {
+                    labels: {
+                      usePointStyle: true,
+                    },
+                  }
               },
               scales: {
                 y: {
                   type: 'linear',
                   display: true,
                   position: 'left',
+                  ticks:{
+                    callback: function(value, index, values) {
+                        return  `${value/1000000} Millions`;
+                    }
+                    
+                  },
                 },
                 y1: {
                   type: 'linear',
                   display: true,
                   position: 'right',
-                 
+                
+                  ticks:{
+                    callback: function(value, index, values) {
+                        return  `${value/1000000} Millions`;
+                    }
+                    
+                  },
           
                   // grid line settings
                   grid: {
-                    drawOnChartArea: false, // only want the grid lines for one axis to show up
+                    drawOnChartArea: true, // only want the grid lines for one axis to show up
                   },
                 },
                 
@@ -247,3 +271,49 @@ async function drawLineChart(url){
 
 
 }
+
+const select = document.getElementById('ListCountries');
+
+async function createListCountries(url){
+    const data = await getData(url)
+    
+    const countries = getCountries(data)
+   // console.log(countries)
+   // console.log(select)
+    for (var i = 0; i<= countries.length-1; i++){
+        var opt = document.createElement('option');
+        opt.value = i;
+        opt.innerHTML = countries[i];
+        select.appendChild(opt);
+    }
+
+}
+
+
+async function dataCountry(url,country){
+    const data = await getData(url)
+    const dtCountry = data.Countries.filter(item => {
+        if (item.Country==country)
+        return item;
+    })
+    return dtCountry;
+}
+
+select.addEventListener('click', async (event) => {
+    
+    let val = select.value;
+    let country = select[val].innerHTML
+    const filtredData = await dataCountry(endpointWorld,country)
+    console.log(filtredData)
+    const{ Country,TotalConfirmed ,TotalDeaths } = filtredData[0];
+
+console.log(Country)
+console.log(TotalConfirmed)
+console.log(TotalDeaths)
+    
+  });
+
+
+
+
+
