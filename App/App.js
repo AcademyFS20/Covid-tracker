@@ -151,6 +151,7 @@ const config = {
     const myBarChart = new Chart(ctxBar,config)
 }
 
+<<<<<<< HEAD
 
 function getCountries(data){
   
@@ -183,6 +184,10 @@ function getTotaldeaths(data){
     //console.log(totalDeaths);
     return totalDeaths;
 }
+=======
+<<<<<<< HEAD
+=======
+>>>>>>> d42eb03fda2cb2f36c37431ff1af73d2cd8425f1
 
 async function drawLineChart(url){
     const data = await getData(url)
@@ -288,6 +293,7 @@ async function createListCountries(url){
     }
 
 }
+<<<<<<< HEAD
 
 
 async function dataCountry(url,country){
@@ -317,3 +323,6 @@ console.log(TotalDeaths)
 
 
 
+=======
+>>>>>>> 2cf66529bee17a08105ef9698522c022430cf960
+>>>>>>> d42eb03fda2cb2f36c37431ff1af73d2cd8425f1
