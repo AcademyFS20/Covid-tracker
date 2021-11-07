@@ -178,7 +178,7 @@ $grey-light: #ededed;
     border: 0;
     font-weight: bold; }
 
-@media screen and (min-width: 320px) and (max-width: 425px) {
+@media screen and (min-width: 0px) and (max-width: 425px) {
   .container {
     width: 100%;
     display: flex;
@@ -186,11 +186,11 @@ $grey-light: #ededed;
     .container__image {
       display: none; }
     .container h1 {
-      font-size: 1.5rem; }
+      font-size: 1rem; }
     .container p {
-      font-size: 1.2rem; }
+      font-size: 0.8rem; }
     .container button {
-      font-size: 0.80rem;
+      font-size: 0.8rem;
       width: 80%;
       height: 3rem; } }
 
@@ -210,11 +210,35 @@ $grey-light: #ededed;
       width: 80%;
       height: 3rem; } }
 
-@media screen and (min-width: 320px) and (max-width: 425px) {
+@media screen and (min-width: 768px) and (max-width: 1442px) {
+  .container {
+    width: 100%; }
+    .container h1 {
+      font-size: 1.5rem; }
+    .container p {
+      font-size: 1.2rem; }
+    .container button {
+      font-size: 1.2rem;
+      width: 80%;
+      height: 3rem; } }
+
+@media screen and (min-width: 1442px) and (max-width: 3424px) {
+  .container {
+    width: 100%; }
+    .container h1 {
+      font-size: 2.5rem; }
+    .container p {
+      font-size: 2.2rem; }
+    .container button {
+      font-size: 1.80rem;
+      width: 80%;
+      height: 3rem; } }
+
+@media screen and (min-width: 0px) and (max-width: 425px) {
   .symptomes h1 {
-    font-size: 1.5rem; }
-  .symptomes h2 {
     font-size: 1.2rem; }
+  .symptomes h2 {
+    font-size: 0.8rem; }
   .symptomes__grid {
     grid-template-areas: 'areaFievre'  'areaVomissements'                        'areaRespiratoire' 'areaToux'; }
   .symptomes__fievre {
@@ -236,6 +260,16 @@ $grey-light: #ededed;
   .symptomes__grid {
     display: contents;
     width: 70%; } }
+
+@media screen and (min-width: 1442px) and (max-width: 2748px) {
+  .symptomes h1 {
+    font-size: 2.5rem; }
+  .symptomes h2 {
+    font-size: 2.2rem; }
+  .symptomes__grid {
+    margin-left: 15%;
+    width: 70%;
+    height: 70%; } }
 
 @media screen and (min-width: 425px) and (max-width: 749px) {
   .containerSteper--btn {
