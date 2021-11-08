@@ -14,9 +14,8 @@ let totalDeaths = document.getElementById("totalDeaths");
 
 /** 
  * @tijani 
- * @return Date String
+ * @return Date object
  * Making a function which will create a date from the data
- * 
  *  */
 function FormatDate(date){
 const options = { timeZone: 'UTC', timeZoneName: 'short',hour: '2-digit', minute: '2-digit' }
