@@ -10,6 +10,15 @@
 html {
   font-size: 62.5%; }
 
+   #body{
+
+    background-color:#FAF9F5;
+   }
+
+
+   footer{
+    margin: 2.5rem auto;
+   }
   .header {
     background-color: #bfdbea; }
   
